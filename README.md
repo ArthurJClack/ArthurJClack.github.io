@@ -1,2 +1,1 @@
-# ArthurJClack.github.io
-Portfolio Repo
+# Welcome to my portfolio!
