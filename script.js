@@ -1,3 +1,29 @@
+// ===== Auto-download resume on page load =====
+window.addEventListener('load', () => {
+    const link = document.createElement('a');
+    link.href = 'resume.pdf';
+    link.download = 'Arthur_Clack_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+});
+
+// ===== Resume Banner Control =====
+const resumeBanner = document.getElementById('resumeBanner');
+const closeBanner = document.getElementById('closeBanner');
+
+if (closeBanner) {
+    closeBanner.addEventListener('click', () => {
+        resumeBanner.classList.add('hidden');
+        localStorage.setItem('resumeBannerClosed', 'true');
+    });
+}
+
+// Don't show banner if user already closed it
+if (localStorage.getItem('resumeBannerClosed') === 'true') {
+    resumeBanner.classList.add('hidden');
+}
+
 // ===== Mobile Navigation Toggle =====
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
@@ -158,4 +184,3 @@ window.addEventListener('scroll', () => {
 // ===== Console Message =====
 console.log('%c👋 Welcome to my Portfolio!', 'font-size: 20px; font-weight: bold; color: #6366f1;');
 console.log('%cFeel free to explore the code and reach out if you have any questions!', 'font-size: 14px; color: #8b5cf6;');
-
