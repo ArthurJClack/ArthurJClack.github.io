@@ -100,7 +100,7 @@ if (heroSection) {
 // Note: You need to set up a Formspree account and get your form ID
 
 // ===== Typing Effect for Hero Section =====
-const roles = ['Student', 'Problem-Solver', 'Quick Learner', 'Innovator'];
+const roles = ['CS Student', 'Software Developer', 'Game Developer', 'Problem-Solver'];
 let roleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
