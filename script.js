@@ -1,186 +1,105 @@
-// ===== Auto-download resume on page load =====
-window.addEventListener('load', () => {
-    const link = document.createElement('a');
-    link.href = 'resume.pdf';
-    link.download = 'Arthur_Clack_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-});
+// Tells the CSS that JS is running, so scroll-reveal never hides content without it
+document.documentElement.classList.add('js');
 
-// ===== Resume Banner Control =====
-const resumeBanner = document.getElementById('resumeBanner');
-const closeBanner = document.getElementById('closeBanner');
-
-if (closeBanner) {
-    closeBanner.addEventListener('click', () => {
-        resumeBanner.classList.add('hidden');
-        localStorage.setItem('resumeBannerClosed', 'true');
-    });
-}
-
-// Don't show banner if user already closed it
-if (localStorage.getItem('resumeBannerClosed') === 'true') {
-    resumeBanner.classList.add('hidden');
-}
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // ===== Mobile Navigation Toggle =====
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    hamburger.classList.toggle('active');
-});
+function setMenu(open) {
+    navLinks.classList.toggle('active', open);
+    hamburger.classList.toggle('active', open);
+    hamburger.setAttribute('aria-expanded', String(open));
+}
 
-// Close mobile menu when clicking on a link
-navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        hamburger.classList.remove('active');
-    });
-});
+hamburger.addEventListener('click', () => setMenu(!navLinks.classList.contains('active')));
 
-// ===== Smooth Scrolling =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const offsetTop = target.offsetTop - 70;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
+// Close the menu on link tap, Escape, or when the screen grows past the menu breakpoint
+navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+window.matchMedia('(min-width: 1101px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
 
-// ===== Navbar Background on Scroll =====
+// ===== Scroll progress bar =====
+const progress = document.getElementById('scrollProgress');
+let ticking = false;
+
+function updateProgress() {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.transform = `scaleX(${max > 0 ? Math.min(window.scrollY / max, 1) : 0})`;
+    ticking = false;
+}
+
 window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+    if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(updateProgress);
     }
-});
+}, { passive: true });
+updateProgress();
 
+// ===== Scroll reveal =====
+const revealTargets = document.querySelectorAll(
+    '.section-kicker, .section-title, .about-content, .education-item, .skills-description, ' +
+    '.resume-content, .experience-card, .project-card, .contact-content'
+);
+revealTargets.forEach(el => el.classList.add('reveal'));
 
-// ===== Scroll Animation for Sections =====
-const fadeObserver = new IntersectionObserver((entries) => {
+if ('IntersectionObserver' in window && !reducedMotion) {
+    const revealObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -5% 0px' });
+    revealTargets.forEach(el => revealObserver.observe(el));
+} else {
+    revealTargets.forEach(el => el.classList.add('visible'));
+}
+
+// ===== Active nav link =====
+const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+const sectionObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            navAnchors.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${entry.target.id}`));
         }
     });
-}, {
-    threshold: 0.1
-});
+}, { rootMargin: '-45% 0px -50% 0px' });
+document.querySelectorAll('section[id]').forEach(s => sectionObserver.observe(s));
 
-// Apply fade-in animation to sections
-document.querySelectorAll('section').forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(20px)';
-    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    fadeObserver.observe(section);
-});
+// ===== Typing effect =====
+const typed = document.getElementById('typed');
+const roles = ['software developer', 'game developer', 'problem-solver', 'builder'];
 
-// Don't animate hero section
-const heroSection = document.querySelector('.hero');
-if (heroSection) {
-    heroSection.style.opacity = '1';
-    heroSection.style.transform = 'translateY(0)';
+if (typed && !reducedMotion) {
+    let roleIndex = 0;
+    let charIndex = roles[0].length;
+    let isDeleting = true;
+
+    const step = () => {
+        const role = roles[roleIndex];
+        charIndex += isDeleting ? -1 : 1;
+        typed.textContent = role.substring(0, charIndex);
+
+        let delay = isDeleting ? 45 : 90;
+        if (!isDeleting && charIndex === role.length) {
+            delay = 2000;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+            delay = 400;
+        }
+        setTimeout(step, delay);
+    };
+    setTimeout(step, 2200);
 }
 
-// ===== Contact Form Handling =====
-// Form is handled by Formspree service (https://formspree.io)
-// Emails will be sent to arthurjamesclack@gmail.com
-// Note: You need to set up a Formspree account and get your form ID
-
-// ===== Typing Effect for Hero Section =====
-const roles = ['CS Student', 'Software Developer', 'Game Developer', 'Problem-Solver'];
-let roleIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-const taglineElement = document.querySelector('.tagline');
-
-function typeEffect() {
-    const currentRole = roles[roleIndex];
-
-    if (isDeleting) {
-        charIndex--;
-    } else {
-        charIndex++;
-    }
-
-    // Update the text (preserve " | " parts)
-    const parts = taglineElement.textContent.split(' | ');
-    parts[0] = currentRole.substring(0, charIndex);
-    taglineElement.textContent = parts.join(' | ');
-
-    let typeSpeed = isDeleting ? 50 : 100;
-
-    if (!isDeleting && charIndex === currentRole.length) {
-        // Pause at end
-        typeSpeed = 2000;
-        isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-        typeSpeed = 500;
-    }
-
-    setTimeout(typeEffect, typeSpeed);
-}
-
-// Start typing effect after page load
-window.addEventListener('load', () => {
-    setTimeout(typeEffect, 1000);
-});
-
-// ===== Parallax Effect for Hero Section =====
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-    }
-});
-
-// ===== Dynamic Year in Footer =====
-const currentYear = new Date().getFullYear();
+// ===== Footer year =====
 const footerText = document.querySelector('.footer-content p');
 if (footerText) {
-    footerText.textContent = `© ${currentYear} Arthur Clack. All rights reserved.`;
+    footerText.textContent = `© ${new Date().getFullYear()} Arthur Clack. All rights reserved.`;
 }
-
-// ===== Active Navigation Link on Scroll =====
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-links a');
-
-    let current = '';
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-
-        if (window.pageYOffset >= sectionTop - 100) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
-
-
-// ===== Console Message =====
-console.log('%c👋 Welcome to my Portfolio!', 'font-size: 20px; font-weight: bold; color: #6366f1;');
-console.log('%cFeel free to explore the code and reach out if you have any questions!', 'font-size: 14px; color: #8b5cf6;');
