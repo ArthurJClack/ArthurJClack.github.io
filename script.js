@@ -41,7 +41,7 @@ updateProgress();
 // ===== Scroll reveal =====
 const revealTargets = document.querySelectorAll(
     '.section-kicker, .section-title, .about-content, .education-item, .skills-description, ' +
-    '.resume-content, .experience-card, .project-card, .contact-content'
+    '.resume-content, .experience-card, .project-card, .skills-group, .about-facts, .contact-content'
 );
 revealTargets.forEach(el => el.classList.add('reveal'));
 
@@ -72,7 +72,7 @@ document.querySelectorAll('section[id]').forEach(s => sectionObserver.observe(s)
 
 // ===== Typing effect =====
 const typed = document.getElementById('typed');
-const roles = ['software developer', 'game developer', 'problem-solver', 'builder'];
+const roles = ['software developer', 'game developer', 'Scrum Master', 'builder'];
 
 if (typed && !reducedMotion) {
     let roleIndex = 0;
