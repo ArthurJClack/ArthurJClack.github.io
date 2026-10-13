@@ -7,27 +7,27 @@
     /* ---------- contacts: each caller covers one section of the site ---------- */
     var PLAYER = { id: 'player', name: 'Visitor' };
     var CONTACTS = [
-        { id: 'colonel', name: 'Colonel', freq: '140.85', tag: 'About', target: '#about', pages: [
+        { id: 'commander', name: 'Commander', freq: '140.85', tag: 'About', target: '#about', pages: [
             'This is Arthur Clack. Computer Science and Systems student at the University of Washington, graduating June 2026.',
             'He builds games, web apps and tools. Right now he is aiming at embedded and safety-critical software.',
             'Outside of code: Muay Thai, working on cars, and guitar. Hit the button below for the full briefing.'
         ] },
-        { id: 'rose', name: 'Rose', freq: '140.96', tag: 'Experience', target: '#experience', pages: [
+        { id: 'medic', name: 'Medic', freq: '140.96', tag: 'Experience', target: '#experience', pages: [
             'I pulled his service record. Software Developer Intern and Scrum Master at the University of Washington since July 2025.',
             'Before that he built an internal web app for 25,000+ Blue Origin employees, and drafted 600+ contracts at King County with zero compliance issues.',
             'Want the whole file? I can open it for you.'
         ] },
-        { id: 'otacon', name: 'Otacon', freq: '141.52', tag: 'Skills', target: '#skills', pages: [
+        { id: 'engineer', name: 'Engineer', freq: '141.52', tag: 'Skills', target: '#skills', pages: [
             'Languages first: C++, C#, Python, Go, TypeScript and JavaScript. He has shipped networked games in Unreal Engine and Godot.',
             'On the tooling side it is AWS, PostgreSQL, Blender, CAD and 3D printing. He is also a certified Scrum Master and AWS Cloud Practitioner.',
             'The full loadout is on the skills page.'
         ] },
-        { id: 'snake', name: 'Snake', freq: '141.12', tag: 'Projects', target: '#projects', pages: [
+        { id: 'operative', name: 'Operative', freq: '141.12', tag: 'Projects', target: '#projects', pages: [
             'His main mission is Shitbox Rally: a physics-based rally game in Godot with Steam multiplayer. Version 0.3.0 is out.',
             'There is also WA Commute Crash Risk, built on open data, plus ApplyBot, AUTO3D and RBR Codriver.',
             'Go see the hardware for yourself.'
         ] },
-        { id: 'meiling', name: 'Mei Ling', freq: '140.15', tag: 'Contact', target: '#contact', pages: [
+        { id: 'analyst', name: 'Analyst', freq: '140.15', tag: 'Contact', target: '#contact', pages: [
             'Arthur is open to software and embedded roles, internships and new-grad positions. Seattle or remote.',
             'You can reach him at arthurjamesclack@gmail.com, or on GitHub and LinkedIn.',
             'Do not go radio silent on him. Say hi!'
@@ -48,27 +48,27 @@
             front: '<path class="d" d="M25 50 Q20 12 52 14 Q82 16 76 48 Q70 30 54 30 Q42 32 38 50 Q32 36 25 50Z"/><rect class="k" x="38" y="42" width="9" height="2"/><rect class="k" x="54" y="42" width="9" height="2"/>',
             body: '<path class="h" d="M34 83 L50 96 L66 83 L62 83 L50 91 L38 83Z"/>'
         },
-        snake: {
+        operative: {
             back: '',
-            front: '<path class="d" d="M26 42 L28 22 L38 27 L44 12 L52 24 L62 14 L68 28 L77 28 L74 42 Q50 30 26 42Z"/><rect class="m" x="26" y="33" width="48" height="7"/><path class="m" d="M74 34 L92 38 L84 43 L94 52 L73 42Z"/><rect class="k" x="37" y="43" width="10" height="2.4"/><rect class="k" x="54" y="43" width="10" height="2.4"/><path class="ln" d="M36 63 Q50 78 64 63" opacity=".7"/><path class="ln" d="M34 56 Q36 66 44 72 M66 56 Q64 66 56 72" opacity=".5"/>',
+            front: '<path class="d" d="M26 42 L28 22 L38 27 L44 12 L52 24 L62 14 L68 28 L77 28 L74 42 Q50 30 26 42Z"/><path class="ln" style="stroke-width:3" d="M26 46 Q26 18 50 18 Q74 18 74 46"/><rect class="m" x="21" y="43" width="8" height="13"/><rect class="m" x="71" y="43" width="8" height="13"/><path class="ln" d="M75 56 Q72 66 60 66"/><rect class="k" x="37" y="43" width="10" height="2.4"/><rect class="k" x="54" y="43" width="10" height="2.4"/><path class="ln" d="M36 63 Q50 78 64 63" opacity=".7"/><path class="ln" d="M34 56 Q36 66 44 72 M66 56 Q64 66 56 72" opacity=".5"/>',
             body: '<path class="d" d="M20 100 L38 84 L40 120 L18 120Z M80 100 L62 84 L60 120 L82 120Z"/>'
         },
-        otacon: {
+        engineer: {
             back: '',
-            front: '<path class="d" d="M26 46 Q22 18 50 18 Q78 18 74 46 Q68 30 54 32 Q48 24 40 32 Q30 32 26 46Z"/><circle class="gl" cx="41" cy="47" r="8"/><circle class="gl" cx="59" cy="47" r="8"/><path class="gl" d="M49 47 L51 47 M33 46 L27 44 M67 46 L73 44"/>',
+            front: '<path class="d" d="M26 46 Q22 18 50 18 Q78 18 74 46 Q68 30 54 32 Q48 24 40 32 Q30 32 26 46Z"/><rect class="m" x="29" y="27" width="42" height="9"/><circle class="gl" cx="40" cy="31.5" r="4"/><circle class="gl" cx="60" cy="31.5" r="4"/>',
             body: '<path class="h" d="M30 83 L50 104 L70 83 L64 83 L50 98 L36 83Z"/><rect class="d" x="48" y="98" width="4" height="22"/>'
         },
-        colonel: {
+        commander: {
             back: '',
             front: '<path class="d" d="M27 42 Q28 18 50 18 Q72 18 73 42 Q50 28 27 42Z"/><path class="ln" style="stroke-width:2.6" d="M35 40 L46 44 M65 40 L54 44"/><path class="ln" d="M36 58 Q40 62 41 66 M64 58 Q60 62 59 66 M43 38 L57 38" opacity=".8"/>',
             body: '<rect class="h" x="38" y="83" width="24" height="5"/><rect class="d" x="14" y="98" width="6" height="3"/><rect class="d" x="24" y="98" width="6" height="3"/><rect class="d" x="70" y="98" width="6" height="3"/>'
         },
-        rose: {
+        medic: {
             back: '<path class="d" d="M22 52 Q16 12 50 12 Q84 12 78 52 L84 104 L62 104 L66 60 L34 60 L38 104 L16 104Z"/>',
             front: '<path class="d" d="M26 44 Q34 20 50 20 Q66 20 74 44 Q60 32 50 38 Q40 32 26 44Z"/>',
             body: ''
         },
-        meiling: {
+        analyst: {
             back: '<circle class="d" cx="28" cy="20" r="9"/><circle class="d" cx="72" cy="20" r="9"/><path class="d" d="M24 50 L20 80 L34 66Z M76 50 L80 80 L66 66Z"/>',
             front: '<path class="d" d="M25 48 Q24 22 50 20 Q76 22 75 48 Q64 34 50 36 Q36 34 25 48Z"/><path class="ln" d="M20 12 L36 28 M80 12 L64 28" stroke="#8bffa6" stroke-width="1.6"/>',
             body: ''
