@@ -8,7 +8,7 @@
     var PLAYER = { id: 'player', name: 'Visitor' };
     var CONTACTS = [
         { id: 'commander', name: 'Commander', freq: '140.85', tag: 'About', target: '#about', pages: [
-            'This is Arthur Clack. Computer Science and Systems student at the University of Washington, graduating June 2026.',
+            'This is Arthur Clack. Computer Science and Systems student at the University of Washington, graduating spring 2027.',
             'He builds games, web apps and tools. Right now he is aiming at embedded and safety-critical software.',
             'Outside of code: Muay Thai, working on cars, and guitar. Hit the button below for the full briefing.'
         ] },
