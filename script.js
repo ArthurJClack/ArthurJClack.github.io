@@ -72,7 +72,7 @@ document.querySelectorAll('section[id]').forEach(s => sectionObserver.observe(s)
 
 // ===== Typing effect =====
 const typed = document.getElementById('typed');
-const roles = ['software developer', 'game developer', 'Scrum Master', 'builder'];
+const roles = ['software developer', 'game developer', 'builder'];
 
 if (typed && !reducedMotion) {
     let roleIndex = 0;

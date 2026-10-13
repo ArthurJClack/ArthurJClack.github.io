@@ -13,7 +13,7 @@
             'Outside of code: Muay Thai, working on cars, and guitar. Hit the button below for the full briefing.'
         ] },
         { id: 'medic', name: 'Medic', freq: '140.96', tag: 'Experience', target: '#experience', pages: [
-            'I pulled his service record. Software Developer Intern and Scrum Master at the University of Washington since July 2025.',
+            'I pulled his service record. Software Developer Intern at the University of Washington since July 2025.',
             'Before that he built an internal web app for 25,000+ Blue Origin employees, and drafted 600+ contracts at King County with zero compliance issues.',
             'Want the whole file? I can open it for you.'
         ] },
