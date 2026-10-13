@@ -23,7 +23,7 @@
             'The full loadout is on the skills page.'
         ] },
         { id: 'operative', name: 'Operative', freq: '141.12', tag: 'Projects', target: '#projects', pages: [
-            'His main mission is Shitbox Rally: a physics-based rally game in Godot with Steam multiplayer. Version 0.3.0 is out.',
+            'His main mission is Shitbox Rally: a physics-based rally game in Godot with Steam multiplayer. Version 0.6.2 is out.',
             'There is also WA Commute Crash Risk, built on open data, plus ApplyBot, AUTO3D and RBR Codriver.',
             'Go see the hardware for yourself.'
         ] },

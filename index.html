@@ -29,9 +29,10 @@
     <meta name="theme-color" content="#0a0a0a">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Orbitron:wght@500;700&family=Rajdhani:wght@500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="codec.css">
+    <link rel="stylesheet" href="ringmenu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -88,7 +89,7 @@
                 <ul>
                     <li><b>NOW</b><span>Software Developer Intern, University of Washington</span></li>
                     <li><b>STUDY</b><span>B.S. Computer Science &amp; Systems, Spring 2027</span></li>
-                    <li><b>SHIPPED</b><span>Shitbox Rally v0.3.0: career mode, Steam multiplayer, voice chat</span></li>
+                    <li><b>SHIPPED</b><span>Shitbox Rally v0.6.2: career mode, Steam multiplayer, voice chat</span></li>
                     <li><b>CERTS</b><span>Scrum.org Professional Scrum Master, AWS Cloud Practitioner</span></li>
                     <li><b>NEXT</b><span>Embedded and safety-critical software</span></li>
                 </ul>
@@ -367,7 +368,7 @@
                     </div>
                     <div class="project-content">
                         <h3>Shitbox Rally</h3>
-                        <p class="project-status live">v0.3.0 released</p>
+                        <p class="project-status live">v0.6.2 released</p>
                         <p>A rally racing game about tired old cars on procedurally generated stages, with a PS1/PS2-era look. Built from the physics up in Godot 4 with Jolt: raycast suspension, a slip-ratio/slip-angle tyre model, simulated clutch, gearboxes and differentials, and engine sounds rendered from real torque curves.</p>
                         <p>Now with a career mode (buy a cheap car, race for money, pay for your own damage), online multiplayer over Steam with lobbies, invites and push-to-talk radio, up to 4-player split-screen, and ten real roads such as the Stelvio Pass and Pikes Peak built from OpenStreetMap and elevation data.</p>
                         <ul class="project-facts">
@@ -530,5 +531,7 @@
 
     <script src="script.js"></script>
     <script src="codec.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    <script src="ringmenu.js" defer></script>
 </body>
 </html>
