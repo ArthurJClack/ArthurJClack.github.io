@@ -29,8 +29,10 @@
     <meta name="theme-color" content="#0a0a0a">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Orbitron:wght@500;700&family=Rajdhani:wght@500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="codec.css">
+    <link rel="stylesheet" href="ringmenu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -72,7 +74,7 @@
                 <p class="eyebrow"><span class="dot"></span> Seattle, WA &middot; Open to software &amp; embedded roles</p>
                 <h1 class="name">Arthur<br><span>Clack</span></h1>
                 <p class="tagline">CS student and <span id="typed">software developer</span><span class="caret" aria-hidden="true"></span></p>
-                <p class="description">I ship things: a physics-based rally game with Steam multiplayer, an internal web app used across Blue Origin, and open-data tools for Washington drivers. Graduating from UW in 2026 and looking for a team that builds reliable, safety-critical software.</p>
+                <p class="description">I ship things: a physics-based rally game with Steam multiplayer, an internal web app used across Blue Origin, and open-data tools for Washington drivers. Graduating from UW in spring 2027 and looking for a team that builds reliable, safety-critical software.</p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">See My Projects</a>
                     <a href="#contact" class="btn btn-secondary">Get In Touch</a>
@@ -85,9 +87,9 @@
             <aside class="hero-panel" aria-label="Quick facts">
                 <div class="panel-bar"><span></span><span></span><span></span><em>pace_notes.txt</em></div>
                 <ul>
-                    <li><b>NOW</b><span>Software Developer Intern &amp; Scrum Master, University of Washington</span></li>
-                    <li><b>STUDY</b><span>B.S. Computer Science &amp; Systems, June 2026</span></li>
-                    <li><b>SHIPPED</b><span>Shitbox Rally v0.3.0: career mode, Steam multiplayer, voice chat</span></li>
+                    <li><b>NOW</b><span>Software Developer Intern, University of Washington</span></li>
+                    <li><b>STUDY</b><span>B.S. Computer Science &amp; Systems, Spring 2027</span></li>
+                    <li><b>SHIPPED</b><span>Shitbox Rally v0.6.2: career mode, Steam multiplayer, voice chat</span></li>
                     <li><b>CERTS</b><span>Scrum.org Professional Scrum Master, AWS Cloud Practitioner</span></li>
                     <li><b>NEXT</b><span>Embedded and safety-critical software</span></li>
                 </ul>
@@ -108,16 +110,16 @@
                 </div>
                 <div class="about-text">
                     <h3>Hi, I'm Arthur Clack</h3>
-                    <p>I'm a Computer Science &amp; Systems student at the University of Washington, graduating in June 2026.
+                    <p>I'm a Computer Science &amp; Systems student at the University of Washington, graduating in spring 2027.
                     I've written software at Blue Origin, led a team of interns at King County, and I'm currently
-                    a developer and Scrum Master on a web app for UW staff.</p>
+                    a developer on a web app for UW staff.</p>
                     <p>On my own time I build a rally game from the physics up: suspension, tyre model, drivetrain, procedural roads
                     and Steam networking, all in Godot. That project taught me more about performance, debugging and shipping
                     than any class, and it's why I want to work on embedded and safety-critical systems where the details matter.</p>
                     <p>When I'm not coding, you can find me in a Muay Thai gym, working on cars, or playing guitar.</p>
                     <ul class="about-facts">
                         <li><i class="fas fa-location-dot"></i> Seattle, WA</li>
-                        <li><i class="fas fa-graduation-cap"></i> UW, class of 2026</li>
+                        <li><i class="fas fa-graduation-cap"></i> UW, class of 2027</li>
                         <li><i class="fas fa-certificate"></i> PSM I &amp; AWS Cloud Practitioner</li>
                         <li><i class="fas fa-briefcase"></i> Open to internships and new-grad roles</li>
                     </ul>
@@ -139,7 +141,7 @@
                     <div class="education-content">
                         <h3>Bachelor of Science in Computer Science &amp; Systems</h3>
                         <h4>University of Washington</h4>
-                        <p class="date">2025 - Expected June 2026</p>
+                        <p class="date">2025 - Expected Spring 2027</p>
                         <p>Data Structures and Algorithms | Database Management | Software Engineering</p>
                     </div>
                 </div>
@@ -251,7 +253,6 @@
                         <p class="date">July 2025 - Present</p>
                         <p>Develop and maintain a web application for UW administrative staff, from requirements to deployment.</p>
                         <p>Own the product backlog in Jira: turn stakeholder needs into technical requirements and user stories.</p>
-                        <p>Serve as Scrum Master, running sprint ceremonies and coordinating the development team.</p>
                         <div class="experience-skills">
                             <span>Go</span>
                             <span>Typescript</span>
@@ -367,7 +368,7 @@
                     </div>
                     <div class="project-content">
                         <h3>Shitbox Rally</h3>
-                        <p class="project-status live">v0.3.0 released</p>
+                        <p class="project-status live">v0.6.2 released</p>
                         <p>A rally racing game about tired old cars on procedurally generated stages, with a PS1/PS2-era look. Built from the physics up in Godot 4 with Jolt: raycast suspension, a slip-ratio/slip-angle tyre model, simulated clutch, gearboxes and differentials, and engine sounds rendered from real torque curves.</p>
                         <p>Now with a career mode (buy a cheap car, race for money, pay for your own damage), online multiplayer over Steam with lobbies, invites and push-to-talk radio, up to 4-player split-screen, and ten real roads such as the Stelvio Pass and Pikes Peak built from OpenStreetMap and elevation data.</p>
                         <ul class="project-facts">
@@ -529,5 +530,8 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="codec.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    <script src="ringmenu.js" defer></script>
 </body>
 </html>
