@@ -369,20 +369,65 @@
                     <div class="project-content">
                         <h3>Shitbox Rally</h3>
                         <p class="project-status live">v0.6.2 released</p>
+                        <figure class="sr-hero">
+                            <video class="sr-video" data-hero muted loop playsinline preload="none" poster="media/shitbox-rally/hero.jpg" width="1280" height="720" aria-label="Shitbox Rally gameplay: a modded silver 2002 WRX throwing gravel on a forest stage">
+                                <source data-src="media/shitbox-rally/hero.mp4" type="video/mp4">
+                                <source data-src="media/shitbox-rally/hero.webm" type="video/webm">
+                            </video>
+                            <button class="sr-sound" type="button" aria-pressed="false"><i class="fas fa-volume-xmark"></i> <span>Sound off</span></button>
+                            <figcaption>Tired old cars, real physics, roads that never repeat.</figcaption>
+                        </figure>
                         <p>A rally racing game about tired old cars on procedurally generated stages, with a PS1/PS2-era look. Built from the physics up in Godot 4 with Jolt: raycast suspension, a slip-ratio/slip-angle tyre model, simulated clutch, gearboxes and differentials, and engine sounds rendered from real torque curves.</p>
                         <p>Now with a career mode (buy a cheap car, race for money, pay for your own damage), online multiplayer over Steam with lobbies, invites and push-to-talk radio, up to 4-player split-screen, and ten real roads such as the Stelvio Pass and Pikes Peak built from OpenStreetMap and elevation data.</p>
                         <ul class="project-facts">
                             <li><b>25+</b> cars with physical specs</li>
                             <li><b>14</b> road surfaces</li>
-                            <li><b>10</b> real-world stages</li>
-                            <li><b>115</b> GDScript files</li>
                         </ul>
+                        <div class="sr-loops">
+                            <figure>
+                                <video class="sr-video" muted loop playsinline preload="none" poster="media/shitbox-rally/loop-1.jpg" width="640" height="360" aria-label="The WRX kicking up snow on a winter stage">
+                                    <source data-src="media/shitbox-rally/loop-1.mp4" type="video/mp4">
+                                    <source data-src="media/shitbox-rally/loop-1.webm" type="video/webm">
+                                </video>
+                                <figcaption>Snow spray</figcaption>
+                            </figure>
+                            <figure>
+                                <video class="sr-video" muted loop playsinline preload="none" poster="media/shitbox-rally/loop-2.jpg" width="640" height="360" aria-label="The WRX doing donuts and tearing up a field">
+                                    <source data-src="media/shitbox-rally/loop-2.mp4" type="video/mp4">
+                                    <source data-src="media/shitbox-rally/loop-2.webm" type="video/webm">
+                                </video>
+                                <figcaption>Donuts</figcaption>
+                            </figure>
+                            <figure>
+                                <video class="sr-video" muted loop playsinline preload="none" poster="media/shitbox-rally/loop-3.jpg" width="640" height="360" aria-label="The WRX sliding on a gravel stage at night">
+                                    <source data-src="media/shitbox-rally/loop-3.mp4" type="video/mp4">
+                                    <source data-src="media/shitbox-rally/loop-3.webm" type="video/webm">
+                                </video>
+                                <figcaption>Night stages</figcaption>
+                            </figure>
+                        </div>
+                        <div class="sr-stills">
+                            <figure>
+                                <picture>
+                                    <source srcset="media/shitbox-rally/still-1.webp" type="image/webp">
+                                    <img src="media/shitbox-rally/still-1.jpg" alt="Close-up of the WRX tire and suspension on sand" width="960" height="540" loading="lazy" decoding="async">
+                                </picture>
+                                <figcaption>Tire and suspension close-up</figcaption>
+                            </figure>
+                            <figure>
+                                <picture>
+                                    <source srcset="media/shitbox-rally/still-2.webp" type="image/webp">
+                                    <img src="media/shitbox-rally/still-2.jpg" alt="An orange muscle car doing a smoky burnout" width="960" height="540" loading="lazy" decoding="async">
+                                </picture>
+                                <figcaption>Burnout smoke</figcaption>
+                            </figure>
+                        </div>
                         <div class="experience-skills">
                             <span>Godot 4</span><span>GDScript</span><span>Jolt Physics</span><span>Steamworks</span><span>Networking</span><span>Shaders</span><span>Procedural generation</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/ArthurJClack/shitboxrally-releases/releases/latest" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-download"></i> Download</a>
-                            <a href="https://github.com/ArthurJClack/shitbox-rally" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://github.com/ArthurJClack/shitboxrally-releases/releases/latest/download/ShitboxRally_Setup.exe" class="btn btn-primary"><i class="fas fa-download"></i> Download for Windows</a>
+                            <a href="https://github.com/ArthurJClack/shitboxrally-releases" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fas fa-flag-checkered"></i> Releases</a>
                         </div>
                     </div>
                 </article>
@@ -530,6 +575,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="media.js" defer></script>
     <script src="codec.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
     <script src="ringmenu.js" defer></script>

@@ -1341,3 +1341,81 @@ section {
 .contact-item p a:hover {
     color: var(--primary-color);
 }
+
+/* ===== Shitbox Rally footage ===== */
+.sr-hero,
+.sr-loops figure,
+.sr-stills figure {
+    position: relative;
+    margin: 0;
+}
+
+.sr-hero {
+    margin: 4px 0 18px;
+}
+
+.sr-hero video,
+.sr-loops video,
+.sr-stills img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.sr-hero figcaption,
+.sr-loops figcaption,
+.sr-stills figcaption {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-light);
+    margin-top: 8px;
+}
+
+.sr-hero figcaption {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+.sr-sound {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    font: 600 0.75rem var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dark);
+    background: rgba(10, 10, 10, 0.7);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.sr-sound:hover,
+.sr-sound[aria-pressed="true"] {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.sr-loops,
+.sr-stills {
+    display: grid;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.sr-loops {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+}
+
+.sr-stills {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+}
