@@ -3,41 +3,6 @@ document.documentElement.classList.add('js');
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// ===== Mobile Navigation Toggle =====
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
-
-function setMenu(open) {
-    navLinks.classList.toggle('active', open);
-    hamburger.classList.toggle('active', open);
-    hamburger.setAttribute('aria-expanded', String(open));
-}
-
-hamburger.addEventListener('click', () => setMenu(!navLinks.classList.contains('active')));
-
-// Close the menu on link tap, Escape, or when the screen grows past the menu breakpoint
-navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
-document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
-window.matchMedia('(min-width: 1101px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
-
-// ===== Scroll progress bar =====
-const progress = document.getElementById('scrollProgress');
-let ticking = false;
-
-function updateProgress() {
-    const max = document.documentElement.scrollHeight - window.innerHeight;
-    progress.style.transform = `scaleX(${max > 0 ? Math.min(window.scrollY / max, 1) : 0})`;
-    ticking = false;
-}
-
-window.addEventListener('scroll', () => {
-    if (!ticking) {
-        ticking = true;
-        requestAnimationFrame(updateProgress);
-    }
-}, { passive: true });
-updateProgress();
-
 // ===== Scroll reveal =====
 const revealTargets = document.querySelectorAll(
     '.section-kicker, .section-title, .about-content, .education-item, .skills-description, ' +
@@ -59,12 +24,16 @@ if ('IntersectionObserver' in window && !reducedMotion) {
     revealTargets.forEach(el => el.classList.add('visible'));
 }
 
-// ===== Active nav link =====
-const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+// ===== Active HUD link =====
+const navAnchors = document.querySelectorAll('.hud-nav a[href^="#"]');
 const sectionObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            navAnchors.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${entry.target.id}`));
+            navAnchors.forEach(a => {
+                const on = a.getAttribute('href') === `#${entry.target.id}`;
+                a.classList.toggle('active', on);
+                if (on && a.scrollIntoView) a.parentElement.scrollTo({ left: a.offsetLeft - 40, behavior: 'auto' });
+            });
         }
     });
 }, { rootMargin: '-45% 0px -50% 0px' });

@@ -20,7 +20,7 @@
             ['Languages', 'C++, C#, Python, Go, TypeScript, JavaScript, Java, GDScript, SQL.', ''],
             ['Engines', 'Unreal Engine 4/5, Godot 4, Jolt Physics, Steamworks.', 'Leaflet and Node.js too.'],
             ['Tools', 'Git, AWS, PostgreSQL, Jira, Blender, CAD and 3D printing, Linux.', ''],
-            ['Practices', 'Agile and Scrum, networking and replication, physics simulation.', 'Procedural generation, shaders, requirements gathering.']
+            ['Practices', 'Agile, networking and replication, physics simulation.', 'Procedural generation, shaders, requirements gathering.']
         ] },
         { label: 'About', target: '#about', l1: 'Briefing.', l2: 'Student, builder.', kids: [
             ['Bio', 'Computer Science and Systems at the University of Washington, class of 2027.', 'Heading toward embedded and safety-critical software.'],
@@ -32,12 +32,11 @@
             ['GitHub', 'github.com/ArthurJClack', 'Opens in a new tab.', 'https://github.com/ArthurJClack'],
             ['LinkedIn', 'linkedin.com/in/arthurclack333', 'Opens in a new tab.', 'https://www.linkedin.com/in/arthurclack333/']
         ] },
-        { label: 'Call', action: 'codec', l1: 'Open the codec.', l2: 'Five callers, one per section.' },
-        { label: 'Enter site', action: 'enter', l1: 'Skip the menu.', l2: 'Scroll the full page.' }
+        { label: 'Call', action: 'codec', l1: 'Open the codec.', l2: 'Five callers, one per section.' }
     ];
 
     var PROJECTS = [
-        { n: 'Shitbox Rally', st: 'v0.6.2 released', d: 'A rally game about tired old cars on procedurally generated stages with a PS1/PS2-era look. Built from the physics up in Godot 4 with Jolt. Career mode, Steam multiplayer, split-screen.', t: ['Godot 4', 'Jolt', 'Steamworks'], l: [['Download', 'https://github.com/ArthurJClack/shitboxrally-releases/releases/latest'], ['Code', 'https://github.com/ArthurJClack/shitbox-rally']] },
+        { n: 'Shitbox Rally', st: 'v0.7.2.4 released', d: 'A rally game about tired old cars on procedurally generated stages with a PS1/PS2-era look. Built from the physics up in Godot 4 with Jolt. Steam multiplayer, split-screen, CB-radio voice chat, force-feedback wheels.', t: ['Godot 4', 'Jolt', 'Steamworks'], l: [['Download', 'https://github.com/ArthurJClack/shitboxrally-releases/releases/latest'], ['Code', 'https://github.com/ArthurJClack/shitbox-rally']] },
         { n: 'WA Commute Crash Risk', st: 'Live', d: 'Maps every fatal traffic crash in Washington from 2010 to 2024 using NHTSA data and estimates your odds of a crash on your own commute.', t: ['JavaScript', 'Leaflet', 'Open data'], l: [['Live app', 'https://arthurjclack.github.io/wa-commute-crash-risk/'], ['Code', 'https://github.com/ArthurJClack/wa-commute-crash-risk']] },
         { n: 'AUTO3D', st: 'In progress', d: 'A website for sharing 3D models of car parts, built for 3D printing and fabrication.', t: ['Web', 'CAD', '3D printing'], l: [['Code', 'https://github.com/ArthurJClack/AUTO3D']] },
         { n: 'Coming soon', st: '', d: 'Something new is in the garage. Check back shortly.', t: [], l: [], soon: true },
@@ -57,7 +56,6 @@
         '<canvas class="rm-gl" aria-hidden="true"></canvas><div class="rm-shade"></div><div class="rm-scan"></div>' +
         '<div class="rm-ui"><h1>ARTHUR<br> CLACK</h1><div class="rm-sub">SOFTWARE DEVELOPER</div>' +
         '<div class="rm-menu" id="rmMenu"></div><div class="rm-panel" id="rmPanel"></div><div class="rm-cards" id="rmCards"></div></div>' +
-        '<button type="button" class="rm-skip" id="rmSkip">Skip to site</button>' +
         '<div class="rm-gate" id="rmGate" role="button" tabindex="0" aria-label="Start"><b>ARTHUR CLACK</b><span>TAP TO START</span></div>';
     root.hidden = seen;
     launch.hidden = !seen;
@@ -121,7 +119,6 @@
                     if (isArr) return;
                     if (it.cards) { openCards(); return; }
                     if (it.action === 'codec') { closeMenu(); var c = document.querySelector('.cdx-launch'); if (c) c.click(); return; }
-                    if (it.action === 'enter') { closeMenu(); return; }
                     if (it.kids) { stack.push(current); current = it.kids.concat([{ label: 'Open page', target: it.target, l1: 'Jump to this section of the site.', l2: '' }]); render(current, true); menu.firstChild.focus(); }
                     else if (it.target) { goTo(it.target); }
                 };
@@ -191,10 +188,9 @@
     gate.addEventListener('click', startGate);
     gate.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); startGate(); } });
     launch.addEventListener('click', openMenu);
-    root.querySelector('#rmSkip').addEventListener('click', closeMenu);
     document.addEventListener('keydown', function (e) {
         if (root.hidden) return;
-        if (e.key === 'Escape') { if (inCards || stack.length) back(); else closeMenu(); return; }
+        if (e.key === 'Escape') { if (inCards || stack.length) back(); return; }
         if (e.key === 'Tab') {
             var f = Array.prototype.filter.call(root.querySelectorAll('button, a[href], [tabindex="0"]'), function (n) { return n.offsetParent !== null; });
             if (!f.length) return;

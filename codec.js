@@ -19,11 +19,11 @@
         ] },
         { id: 'engineer', name: 'Engineer', freq: '141.52', tag: 'Skills', target: '#skills', pages: [
             'Languages first: C++, C#, Python, Go, TypeScript and JavaScript. He has shipped networked games in Unreal Engine and Godot.',
-            'On the tooling side it is AWS, PostgreSQL, Blender, CAD and 3D printing. He is also a certified Scrum Master and AWS Cloud Practitioner.',
+            'On the tooling side it is AWS, PostgreSQL, Blender, CAD and 3D printing. He is also an AWS Certified Cloud Practitioner.',
             'The full loadout is on the skills page.'
         ] },
         { id: 'operative', name: 'Operative', freq: '141.12', tag: 'Projects', target: '#projects', pages: [
-            'His main mission is Shitbox Rally: a physics-based rally game in Godot with Steam multiplayer. Version 0.6.2 is out.',
+            'His main mission is Shitbox Rally: a physics-based rally game in Godot with Steam multiplayer. Version 0.7.2.4 is out.',
             'There is also WA Commute Crash Risk, built on open data, plus ApplyBot, AUTO3D and RBR Codriver.',
             'Go see the hardware for yourself.'
         ] },
