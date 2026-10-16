@@ -146,3 +146,6 @@ body::after {
 .rm-launch, .cdx-launch { z-index: 1200; }
 .name { font-size: clamp(2.4rem, 9vw, 5.6rem); letter-spacing: .06em; line-height: 1.05; overflow-wrap: normal; }
 .hero { padding-bottom: 96px; }
+.sr-hero video { cursor: pointer; }
+.sr-hint { color: var(--accent-color); white-space: nowrap; }
+.sr-hero.playing .sr-hint { display: none; }
