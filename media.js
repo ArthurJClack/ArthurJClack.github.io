@@ -36,7 +36,23 @@
             });
         }, { threshold: 0.35 });
 
-        videos.forEach(function (v) { near.observe(v); onScreen.observe(v); });
+        videos.forEach(function (v) {
+            near.observe(v);
+            if (!v.hasAttribute('data-hero')) onScreen.observe(v);   // the hero waits for hover or tap
+        });
+    }
+
+    // Hero: the still (with the car in frame) shows until you hover it (mouse) or tap it (touch).
+    var heroFig = document.querySelector('.sr-hero');
+    var heroVid = document.querySelector('.sr-video[data-hero]');
+    if (heroFig && heroVid && !reducedMotion) {
+        var go = function () { load(heroVid); var p = heroVid.play(); if (p && p.catch) p.catch(function () {}); heroFig.classList.add('playing'); };
+        var stop = function () { heroVid.pause(); heroVid.currentTime = 0; heroFig.classList.remove('playing'); };
+        heroFig.addEventListener('mouseenter', go);
+        heroFig.addEventListener('mouseleave', stop);
+        heroVid.addEventListener('click', function () { if (heroVid.paused) go(); else stop(); });
+        heroVid.setAttribute('tabindex', '0');
+        heroVid.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); heroVid.paused ? go() : stop(); } });
     }
 
     // Hero clip has game audio; it starts muted and this button toggles it.

@@ -1,0 +1,115 @@
+/* Halo theme for the whole page. Loaded after styles.css, so these tokens and rules win. */
+:root {
+    --primary-color: #7fd8ff;
+    --secondary-color: #2f8fd0;
+    --accent-color: #ffc15a;
+    --text-dark: #d6e8f2;
+    --text-light: #86a3b5;
+    --bg-white: #061520;
+    --bg-light: #04101a;
+    --bg-dark: #02060a;
+    --border-color: rgba(127, 216, 255, .28);
+    --grad: linear-gradient(135deg, #2f8fd0, #7fd8ff);
+    --shadow: 0 0 14px rgba(47, 143, 208, .22);
+    --shadow-lg: 0 0 28px rgba(47, 143, 208, .35);
+    --nav-h: 0px;
+    --font-body: 'Rajdhani', 'Arial Narrow', sans-serif;
+    --font-mono: 'Orbitron', 'Arial Narrow', sans-serif;
+    --glow: 0 0 10px rgba(127, 216, 255, .75), 0 0 28px rgba(47, 143, 208, .6);
+}
+body {
+    font-size: 1.1rem;
+    background:
+        radial-gradient(70% 50% at 90% 0%, rgba(47, 143, 208, .22), transparent 70%),
+        radial-gradient(60% 45% at 5% 100%, rgba(255, 193, 90, .07), transparent 70%),
+        #02060a;
+    background-attachment: fixed;
+}
+body::before { /* scanlines */
+    content: ""; position: fixed; inset: 0; z-index: 3200; pointer-events: none;
+    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, .22) 0 1px, transparent 1px 3px);
+    mix-blend-mode: multiply;
+}
+h1, h2, h3, h4, .logo-text, .btn, .section-kicker, .eyebrow, .project-status { font-family: 'Orbitron', 'Arial Narrow', sans-serif; letter-spacing: .06em; }
+a { color: var(--primary-color); }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline-color: var(--accent-color); }
+::selection { background: rgba(127, 216, 255, .35); color: #fff; }
+
+/* progress-free: headings glow */
+.section-kicker { color: var(--accent-color); text-shadow: 0 0 10px rgba(255, 193, 90, .5); }
+.section-title, .name { font-family: 'Orbitron', sans-serif; text-transform: uppercase; letter-spacing: .1em; color: #eaf8ff; text-shadow: var(--glow); }
+.name span { color: var(--primary-color); -webkit-text-fill-color: var(--primary-color); background: none; }
+.tagline, .description { color: var(--text-dark); }
+.caret { background: var(--primary-color); box-shadow: var(--glow); }
+
+/* panels: clipped corners, thin cyan edge, soft glow */
+.project-card, .experience-card, .education-item, .skills-description, .skills-group,
+.contact-form, .contact-item, .resume-viewer, .about-facts li {
+    background: linear-gradient(160deg, rgba(8, 32, 48, .78), rgba(3, 12, 20, .86));
+    border: 1px solid rgba(127, 216, 255, .32);
+    border-radius: 0;
+    box-shadow: inset 0 0 24px rgba(47, 143, 208, .08), 0 0 18px rgba(47, 143, 208, .14);
+    clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));
+    backdrop-filter: blur(2px);
+}
+.project-status { color: var(--accent-color); }
+.project-status.live { color: #8dffb0; text-shadow: 0 0 8px rgba(141, 255, 176, .5); }
+.project-card:hover, .experience-card:hover { border-color: var(--primary-color); box-shadow: inset 0 0 24px rgba(47, 143, 208, .12), var(--shadow-lg); }
+.project-header, .experience-header, .education-icon { background: linear-gradient(135deg, #0b3550, #12577f); color: #eaf8ff; }
+.project-header i, .experience-header i, .education-icon i { text-shadow: var(--glow); }
+.panel-bar em { color: var(--primary-color); }
+.experience-skills span { background: rgba(127, 216, 255, .1); color: var(--primary-color); border: 1px solid rgba(127, 216, 255, .35); border-radius: 0; font-family: 'Rajdhani', sans-serif; letter-spacing: .08em; }
+.date, .education-content .date { color: var(--accent-color); }
+.education-content h4, .experience-content h4 { color: var(--primary-color); }
+
+/* buttons */
+.btn { border-radius: 0; text-transform: uppercase; letter-spacing: .16em; font-size: .85rem; clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px); }
+.btn-primary { background: linear-gradient(135deg, #2f8fd0, #7fd8ff); color: #02060a; border: 0; box-shadow: none; }
+.btn-primary:hover { background: #bfeaff; color: #02060a; }
+.btn-secondary { background: rgba(127, 216, 255, .08); color: var(--primary-color); border: 1px solid rgba(127, 216, 255, .6); }
+.btn-secondary:hover { background: rgba(127, 216, 255, .22); color: #fff; }
+.social-links a { color: var(--primary-color); border-color: rgba(127, 216, 255, .4); border-radius: 0; }
+.social-links a:hover { background: rgba(127, 216, 255, .18); color: #fff; }
+
+/* form */
+.form-group input, .form-group textarea { background: rgba(2, 10, 16, .8); color: #eaf8ff; border: 1px solid rgba(127, 216, 255, .35); border-radius: 0; font-family: 'Rajdhani', sans-serif; font-size: 1.05rem; }
+.form-group input:focus, .form-group textarea:focus { border-color: var(--primary-color); box-shadow: var(--shadow); outline: none; }
+.contact-item i { color: var(--primary-color); text-shadow: var(--glow); }
+
+/* footer */
+.footer { background: rgba(2, 10, 16, .9); border-top: 1px solid rgba(127, 216, 255, .4); }
+.footer a { color: var(--text-light); }
+.footer a:hover { color: #fff; }
+
+/* Shitbox Rally footage */
+.sr-hero video, .sr-loops video, .sr-stills img, .resume-viewer img { border: 1px solid rgba(127, 216, 255, .4); border-radius: 0; }
+.sr-sound { font-family: 'Rajdhani', sans-serif; letter-spacing: .14em; text-transform: uppercase; border-radius: 0; border: 1px solid rgba(127, 216, 255, .6); background: rgba(2, 10, 16, .8); color: var(--primary-color); }
+figcaption { color: var(--text-light); font-family: 'Rajdhani', sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+
+@media (max-width: 600px) { body { font-size: 1.05rem; } }
+
+.sr-hero video { cursor: pointer; }
+.sr-hint { color: var(--accent-color); white-space: nowrap; }
+.sr-hero.playing .sr-hint { display: none; }
+
+/* the site's pages open as glass panels over the ring world */
+html.js, html.js body { overflow: hidden; height: 100%; }
+.js .pages {
+    position: fixed; inset: 0; z-index: 3100; display: none; overflow-y: auto; overscroll-behavior: contain;
+    background: rgba(2, 8, 14, .82); backdrop-filter: blur(3px);
+}
+.js .pages.on { display: block; }
+.js .pages section { display: none; padding: clamp(20px, 4vw, 48px) 0 80px; }
+.js .pages section.on { display: block; }
+.rm-pagebar { display: none; }
+.js .pages.on .rm-pagebar {
+    display: flex; position: sticky; top: 0; z-index: 5; padding: 10px max(14px, env(safe-area-inset-left));
+    background: linear-gradient(180deg, rgba(2, 10, 16, .97), rgba(2, 10, 16, .85));
+    border-bottom: 1px solid rgba(127, 216, 255, .45);
+}
+.rm-pagebar button {
+    font: 600 15px/1 'Rajdhani', sans-serif; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--primary-color); background: transparent; border: 1px solid rgba(127, 216, 255, .6);
+    padding: 10px 14px; cursor: pointer; box-shadow: 0 0 14px rgba(47, 143, 208, .3);
+}
+.rm-pagebar button:hover, .rm-pagebar button:focus-visible { color: #fff; background: rgba(127, 216, 255, .18); }
