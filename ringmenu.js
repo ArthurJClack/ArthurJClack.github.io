@@ -4,8 +4,6 @@
     'use strict';
 
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var seen = false;
-    try { seen = sessionStorage.getItem('rmSeen') === '1'; } catch (e) { /* storage is optional */ }
 
     /* ---------- content ---------- */
     // Each entry: [label, line 1, line 2, children?, url?]. 'target' jumps to a page section.
@@ -24,7 +22,7 @@
         ] },
         { label: 'About', target: '#about', l1: 'Briefing.', l2: 'Student, builder.', kids: [
             ['Bio', 'Computer Science and Systems at the University of Washington, class of 2027.', 'Heading toward embedded and safety-critical software.'],
-            ['Education', 'B.S. Computer Science and Systems, UW, expected spring 2027.', 'A.A. Computer Science, Tacoma Community College, GPA 3.9.'],
+            ['Education', 'B.S. Computer Science and Systems, UW, expected spring 2027.', 'A.A. Computer Science, Tacoma Community College, GPA 3.9.', null, '#education'],
             ['Hobbies', 'Muay Thai, working on cars, guitar.', '']
         ] },
         { label: 'Contact', target: '#contact', l1: 'Comms.', l2: 'Open to software and embedded roles.', kids: [
@@ -32,7 +30,7 @@
             ['GitHub', 'github.com/ArthurJClack', 'Opens in a new tab.', 'https://github.com/ArthurJClack'],
             ['LinkedIn', 'linkedin.com/in/arthurclack333', 'Opens in a new tab.', 'https://www.linkedin.com/in/arthurclack333/']
         ] },
-        { label: 'Call', action: 'codec', l1: 'Open the codec.', l2: 'Five callers, one per section.' }
+        { label: 'Resume', target: '#resume', l1: 'The one-pager.', l2: 'View it or download the PDF.' }
     ];
 
     var PROJECTS = [
@@ -46,8 +44,6 @@
     /* ---------- DOM ---------- */
     function el(tag, cls, html) { var n = document.createElement(tag); if (cls) n.className = cls; if (html) n.innerHTML = html; return n; }
 
-    var launch = el('button', 'rm rm-launch', 'Menu');
-    launch.type = 'button';
     var root = el('div', 'rm rm-overlay');
     root.setAttribute('role', 'dialog');
     root.setAttribute('aria-modal', 'true');
@@ -57,10 +53,7 @@
         '<div class="rm-ui"><h1>ARTHUR<br> CLACK</h1><div class="rm-sub">SOFTWARE DEVELOPER</div>' +
         '<div class="rm-menu" id="rmMenu"></div><div class="rm-panel" id="rmPanel"></div><div class="rm-cards" id="rmCards"></div></div>' +
         '<div class="rm-gate" id="rmGate" role="button" tabindex="0" aria-label="Start"><b>ARTHUR CLACK</b><span>TAP TO START</span></div>';
-    root.hidden = seen;
-    launch.hidden = !seen;
     document.body.appendChild(root);
-    document.body.appendChild(launch);
 
     var menu = root.querySelector('#rmMenu'), panel = root.querySelector('#rmPanel'), cardsEl = root.querySelector('#rmCards');
     var gate = root.querySelector('#rmGate'), sub = root.querySelector('.rm-sub');
@@ -70,7 +63,7 @@
         return '<div class="rm-card' + (p.soon ? ' soon' : '') + '"><h3>' + p.n + '</h3>' + (p.st ? '<div class="st">' + p.st + '</div>' : '') +
             '<p>' + p.d + '</p>' + (p.t.length ? '<div class="tg">' + p.t.map(function (x) { return '<i>' + x + '</i>'; }).join('') + '</div>' : '') +
             (p.l.length ? '<div class="ln">' + p.l.map(function (k) { return '<a href="' + k[1] + '" target="_blank" rel="noopener">' + k[0] + '</a>'; }).join('') + '</div>' : '') + '</div>';
-    }).join('') + '<div style="grid-column:1/-1;text-align:center"><button type="button" class="rm-back" id="rmBack">Back</button></div>';
+    }).join('') + '<div style="grid-column:1/-1;text-align:center"><button type="button" class="rm-back" id="rmMore">Full details</button> <button type="button" class="rm-back" id="rmBack">Back</button></div>';
 
     /* ---------- menu logic ---------- */
     function itemLines(it) {
@@ -95,11 +88,32 @@
     }
     function mark(node) { menu.querySelectorAll('button, a').forEach(function (x) { x.classList.toggle('on', x === node); }); }
 
+    /* ---------- pages: the site's sections open as panels over the ring ---------- */
+    var pages = document.getElementById('pages');
+    var pageOpen = false;
+    var bar = el('div', 'rm-pagebar');
+    var pbBack = el('button', '', '\u25c4 Back');
+    pbBack.type = 'button';
+    bar.appendChild(pbBack);
+    if (pages) pages.insertBefore(bar, pages.firstChild);
+
     function goTo(target) {
-        closeMenu();
-        var node = document.querySelector(target);
-        if (node) { node.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' }); }
+        var node = pages && pages.querySelector(target);
+        if (!node) return;
+        Array.prototype.forEach.call(pages.querySelectorAll('section'), function (s) { s.classList.toggle('on', s === node); });
+        pages.classList.add('on');
+        pages.scrollTop = 0;
+        pageOpen = true;
+        root.querySelector('.rm-ui').setAttribute('inert', '');
+        pbBack.focus();
     }
+    function closePage() {
+        pageOpen = false;
+        pages.classList.remove('on');
+        root.querySelector('.rm-ui').removeAttribute('inert');
+        if (menu.firstChild) menu.firstChild.focus();
+    }
+    pbBack.addEventListener('click', closePage);
 
     function render(list, isSub) {
         menu.innerHTML = '';
@@ -116,9 +130,8 @@
             if (!url) {
                 node.onclick = function () {
                     preview();
-                    if (isArr) return;
+                    if (isArr) { if (it[4]) goTo(it[4]); return; }
                     if (it.cards) { openCards(); return; }
-                    if (it.action === 'codec') { closeMenu(); var c = document.querySelector('.cdx-launch'); if (c) c.click(); return; }
                     if (it.kids) { stack.push(current); current = it.kids.concat([{ label: 'Open page', target: it.target, l1: 'Jump to this section of the site.', l2: '' }]); render(current, true); menu.firstChild.focus(); }
                     else if (it.target) { goTo(it.target); }
                 };
@@ -160,25 +173,6 @@
     }
     root.querySelector('#rmBack').onclick = closeCards;
 
-    /* ---------- open / close ---------- */
-    function openMenu() {
-        lastFocus = document.activeElement;
-        root.hidden = false; launch.hidden = true;
-        root.classList.add('rm-started');
-        gate.classList.add('off');
-        document.documentElement.style.overflow = 'hidden';
-        stack = []; current = TREE; if (inCards) closeCards();
-        render(TREE, false);
-        startRender();
-        if (menu.firstChild) menu.firstChild.focus();
-    }
-    function closeMenu() {
-        root.hidden = true; launch.hidden = false;
-        document.documentElement.style.overflow = '';
-        stopRender();
-        try { sessionStorage.setItem('rmSeen', '1'); } catch (e) { /* ignore */ }
-        if (lastFocus && lastFocus.focus) lastFocus.focus();
-    }
     function startGate() {
         gate.classList.add('off');
         root.classList.add('rm-started');
@@ -187,12 +181,11 @@
     }
     gate.addEventListener('click', startGate);
     gate.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); startGate(); } });
-    launch.addEventListener('click', openMenu);
+    root.querySelector('#rmMore').onclick = function () { goTo('#projects'); };
     document.addEventListener('keydown', function (e) {
-        if (root.hidden) return;
-        if (e.key === 'Escape') { if (inCards || stack.length) back(); return; }
+        if (e.key === 'Escape') { if (pageOpen) closePage(); else if (inCards || stack.length) back(); return; }
         if (e.key === 'Tab') {
-            var f = Array.prototype.filter.call(root.querySelectorAll('button, a[href], [tabindex="0"]'), function (n) { return n.offsetParent !== null; });
+            var f = Array.prototype.filter.call((pageOpen ? pages : root).querySelectorAll('button, a[href], input, textarea, video[tabindex], [tabindex="0"]'), function (n) { return n.offsetParent !== null; });
             if (!f.length) return;
             var first = f[0], last = f[f.length - 1];
             if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
@@ -287,5 +280,5 @@
 
     /* ---------- boot ---------- */
     render(TREE, false);
-    if (!seen) startRender();
+    startRender();
 }());

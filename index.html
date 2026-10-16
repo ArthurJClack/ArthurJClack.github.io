@@ -30,52 +30,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Orbitron:wght@500;700&family=Rajdhani:wght@500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+    <script>document.documentElement.classList.add('js')</script>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="halo.css">
-    <link rel="stylesheet" href="codec.css">
     <link rel="stylesheet" href="ringmenu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header class="hud">
-        <a class="hud-logo" href="#home" aria-label="Arthur Clack, back to top">AC</a>
-        <nav class="hud-nav" aria-label="Sections">
-            <a href="#home">Home</a><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#resume">Resume</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
-        </nav>
-        <a href="resume.pdf" download="Arthur_Clack_Resume.pdf" class="hud-dl"><i class="fas fa-download"></i><span>Resume</span></a>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-glow" aria-hidden="true"></div>
-        <div class="container hero-grid">
-            <div class="hero-content">
-                <p class="eyebrow"><span class="dot"></span> Seattle, WA &middot; Open to software &amp; embedded roles</p>
-                <h1 class="name">Arthur<br><span>Clack</span></h1>
-                <p class="tagline">CS student and <span id="typed">software developer</span><span class="caret" aria-hidden="true"></span></p>
-                <p class="description">I ship things: a physics-based rally game with Steam multiplayer, a web app for UW staff, and open-data tools for Washington drivers. Graduating from UW in spring 2027 and looking for a team that builds reliable, safety-critical software.</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">See My Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                </div>
-                <div class="social-links">
-                    <a href="https://github.com/ArthurJClack" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/arthurclack333/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-            <aside class="hero-panel" aria-label="Quick facts">
-                <div class="panel-bar"><span></span><span></span><span></span><em>pace_notes.txt</em></div>
-                <ul>
-                    <li><b>NOW</b><span>Software Developer Intern, University of Washington</span></li>
-                    <li><b>STUDY</b><span>B.S. Computer Science &amp; Systems, Spring 2027</span></li>
-                    <li><b>SHIPPED</b><span>Shitbox Rally v0.7.2.4: Steam multiplayer, split-screen, CB-radio voice chat, force feedback</span></li>
-                    <li><b>CERT</b><span>AWS Certified Cloud Practitioner</span></li>
-                    <li><b>NEXT</b><span>Embedded and safety-critical software</span></li>
-                </ul>
-            </aside>
-        </div>
-    </section>
-
+    <main class="pages" id="pages" aria-label="Pages">
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
@@ -535,28 +497,9 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2026 Arthur Clack. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#education">Education</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#resume">Resume</a>
-                    <a href="#experience">Experience</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    </main>
 
-    <script src="script.js"></script>
     <script src="media.js" defer></script>
-    <script src="codec.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
     <script src="ringmenu.js" defer></script>
 </body>
