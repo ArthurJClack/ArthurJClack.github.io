@@ -34,10 +34,10 @@
     ];
 
     var PROJECTS = [
-        { n: 'Shitbox Rally', st: 'v0.7.2.4 released', d: 'A rally game about tired old cars on procedurally generated stages with a PS1/PS2-era look. Built from the physics up in Godot 4 with Jolt. Steam multiplayer, split-screen, CB-radio voice chat, force-feedback wheels.', t: ['Godot 4', 'Jolt', 'Steamworks'], l: [['Download', 'https://github.com/ArthurJClack/shitboxrally-releases/releases/latest'], ['Code', 'https://github.com/ArthurJClack/shitbox-rally']] },
+        { n: 'Shitbox Rally', st: 'v0.7.6.4 released', d: 'A rally game about tired old cars on procedurally generated stages with a PS1/PS2-era look. Built from the physics up in Godot 4 with Jolt. 60 cars, a race track with laps, ECU tuning, Steam multiplayer, force-feedback wheels.', t: ['Godot 4', 'Jolt', 'Steamworks'], l: [['Download', 'https://github.com/ArthurJClack/shitboxrally-releases/releases/latest'], ['Code', 'https://github.com/ArthurJClack/shitbox-rally']] },
         { n: 'WA Commute Crash Risk', st: 'Live', d: 'Maps every fatal traffic crash in Washington from 2010 to 2024 using NHTSA data and estimates your odds of a crash on your own commute.', t: ['JavaScript', 'Leaflet', 'Open data'], l: [['Live app', 'https://arthurjclack.github.io/wa-commute-crash-risk/'], ['Code', 'https://github.com/ArthurJClack/wa-commute-crash-risk']] },
         { n: 'AUTO3D', st: 'In progress', d: 'A website for sharing 3D models of car parts, built for 3D printing and fabrication.', t: ['Web', 'CAD', '3D printing'], l: [['Code', 'https://github.com/ArthurJClack/AUTO3D']] },
-        { n: 'Coming soon', st: '', d: 'Something new is in the garage. Check back shortly.', t: [], l: [], soon: true },
+        { n: 'wetwaresuite', st: 'In progress', d: 'An all-in-one, lightweight software suite: CAD, photo, paint, 3D, audio, video, office and a file toolkit as small standalone apps on one shared core. Offline, no account, drivable by Claude over MCP.', t: ['C++20', 'Rust', 'MCP'], l: [['Download', 'https://github.com/ArthurJClack/wetwaresuite/releases/latest'], ['Code', 'https://github.com/ArthurJClack/wetwaresuite']] },
         { n: 'Coming soon', st: '', d: 'Something new is in the garage. Check back shortly.', t: [], l: [], soon: true }
     ];
 
