@@ -26,77 +26,18 @@
       "sameAs": ["https://github.com/ArthurJClack", "https://www.linkedin.com/in/arthurclack333/"]
     }
     </script>
-    <meta name="theme-color" content="#0a0a0a">
+    <meta name="theme-color" content="#02060a">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Orbitron:wght@500;700&family=Rajdhani:wght@500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+    <script>document.documentElement.classList.add('js')</script>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="codec.css">
+    <link rel="stylesheet" href="halo.css">
     <link rel="stylesheet" href="ringmenu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="container">
-            <a class="logo" href="#home" aria-label="Arthur Clack, back to top">
-                <span class="logo-mark">AC</span>
-                <span class="logo-text">Arthur Clack</span>
-            </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="resume.pdf" download="Arthur_Clack_Resume.pdf" class="download-resume-btn">
-                    <i class="fas fa-download"></i> Download Resume
-                </a></li>
-            </ul>
-            <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-glow" aria-hidden="true"></div>
-        <div class="container hero-grid">
-            <div class="hero-content">
-                <p class="eyebrow"><span class="dot"></span> Seattle, WA &middot; Open to software &amp; embedded roles</p>
-                <h1 class="name">Arthur<br><span>Clack</span></h1>
-                <p class="tagline">CS student and <span id="typed">software developer</span><span class="caret" aria-hidden="true"></span></p>
-                <p class="description">I ship things: a physics-based rally game with Steam multiplayer, an internal web app used across Blue Origin, and open-data tools for Washington drivers. Graduating from UW in spring 2027 and looking for a team that builds reliable, safety-critical software.</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">See My Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                </div>
-                <div class="social-links">
-                    <a href="https://github.com/ArthurJClack" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/arthurclack333/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-            <aside class="hero-panel" aria-label="Quick facts">
-                <div class="panel-bar"><span></span><span></span><span></span><em>pace_notes.txt</em></div>
-                <ul>
-                    <li><b>NOW</b><span>Software Developer Intern, University of Washington</span></li>
-                    <li><b>STUDY</b><span>B.S. Computer Science &amp; Systems, Spring 2027</span></li>
-                    <li><b>SHIPPED</b><span>Shitbox Rally v0.6.2: career mode, Steam multiplayer, voice chat</span></li>
-                    <li><b>CERTS</b><span>Scrum.org Professional Scrum Master, AWS Cloud Practitioner</span></li>
-                    <li><b>NEXT</b><span>Embedded and safety-critical software</span></li>
-                </ul>
-            </aside>
-        </div>
-    </section>
-
+    <main class="pages" id="pages" aria-label="Pages">
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
@@ -120,7 +61,7 @@
                     <ul class="about-facts">
                         <li><i class="fas fa-location-dot"></i> Seattle, WA</li>
                         <li><i class="fas fa-graduation-cap"></i> UW, class of 2027</li>
-                        <li><i class="fas fa-certificate"></i> PSM I &amp; AWS Cloud Practitioner</li>
+                        <li><i class="fas fa-certificate"></i> AWS Cloud Practitioner</li>
                         <li><i class="fas fa-briefcase"></i> Open to internships and new-grad roles</li>
                     </ul>
                 </div>
@@ -161,10 +102,10 @@
                         <i class="fas fa-certificate"></i>
                     </div>
                     <div class="education-content">
-                        <h3>Certifications</h3>
-                        <h4>Scrum.org &middot; Amazon Web Services</h4>
+                        <h3>Certification</h3>
+                        <h4>Amazon Web Services</h4>
                         <p class="date">2024</p>
-                        <p>Professional Scrum Master I | AWS Certified Cloud Practitioner</p>
+                        <p>AWS Certified Cloud Practitioner</p>
                     </div>
                 </div>
             </div>
@@ -207,7 +148,7 @@
                     <div class="skills-group">
                         <h4><i class="fas fa-people-group"></i> Practices</h4>
                         <div class="experience-skills">
-                            <span>Agile / Scrum</span><span>Networking &amp; replication</span><span>Physics simulation</span><span>Procedural generation</span><span>Shaders</span><span>Requirements gathering</span>
+                            <span>Agile</span><span>Networking &amp; replication</span><span>Physics simulation</span><span>Procedural generation</span><span>Shaders</span><span>Requirements gathering</span>
                         </div>
                     </div>
                 </div>
@@ -344,13 +285,22 @@
                         </div>
                     </div>
                 </article>
-                <article class="project-card coming-soon" aria-label="Coming soon">
+                <article class="project-card">
                     <div class="project-header">
-                        <i class="fas fa-hourglass-half"></i>
+                        <i class="fas fa-toolbox"></i>
                     </div>
                     <div class="project-content">
-                        <h3>Coming Soon</h3>
-                        <p>Something new is in the garage. Check back shortly.</p>
+                        <h3>wetwaresuite</h3>
+                        <p class="project-status">In progress</p>
+                        <p>An all-in-one, lightweight software suite: CAD and blueprints, photo and paint, 3D modeling, audio, video, game assets, office documents and a universal file toolkit, all on one shared core.</p>
+                        <p>It ships as small standalone apps so you install only what you need, and they hand work to each other, like a texture from the image app onto a model. Everything works offline with no account, and Claude can drive every app over MCP. Installers for Windows, macOS and Linux, GPL-3.0.</p>
+                        <div class="experience-skills">
+                            <span>C++20</span><span>CMake</span><span>Rust</span><span>MCP</span><span>3D geometry</span><span>Cross-platform</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/ArthurJClack/wetwaresuite/releases/latest" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-download"></i> Download</a>
+                            <a href="https://github.com/ArthurJClack/wetwaresuite" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-github"></i> Code</a>
+                        </div>
                     </div>
                 </article>
                 <article class="project-card coming-soon" aria-label="Coming soon">
@@ -368,19 +318,21 @@
                     </div>
                     <div class="project-content">
                         <h3>Shitbox Rally</h3>
-                        <p class="project-status live">v0.6.2 released</p>
+                        <p class="project-status live">v0.7.6.4 released</p>
                         <figure class="sr-hero">
-                            <video class="sr-video" data-hero muted loop playsinline preload="none" poster="media/shitbox-rally/hero.jpg" width="1280" height="720" aria-label="Shitbox Rally gameplay: a modded silver 2002 WRX throwing gravel on a forest stage">
+                            <video class="sr-video" data-hero muted loop playsinline preload="none" poster="media/shitbox-rally/hero-still.jpg" width="1280" height="720" aria-label="Shitbox Rally gameplay: a modded silver 2002 WRX throwing gravel on a forest stage">
                                 <source data-src="media/shitbox-rally/hero.mp4" type="video/mp4">
                                 <source data-src="media/shitbox-rally/hero.webm" type="video/webm">
                             </video>
                             <button class="sr-sound" type="button" aria-pressed="false"><i class="fas fa-volume-xmark"></i> <span>Sound off</span></button>
-                            <figcaption>Tired old cars, real physics, roads that never repeat.</figcaption>
+                            <figcaption>Tired old cars, real physics, roads that never repeat. <span class="sr-hint">Hover or tap to play.</span></figcaption>
                         </figure>
                         <p>A rally racing game about tired old cars on procedurally generated stages, with a PS1/PS2-era look. Built from the physics up in Godot 4 with Jolt: raycast suspension, a slip-ratio/slip-angle tyre model, simulated clutch, gearboxes and differentials, and engine sounds rendered from real torque curves.</p>
-                        <p>Now with a career mode (buy a cheap car, race for money, pay for your own damage), online multiplayer over Steam with lobbies, invites and push-to-talk radio, up to 4-player split-screen, and ten real roads such as the Stelvio Pass and Pikes Peak built from OpenStreetMap and elevation data.</p>
+                        <p>Steam lobbies or join by IP, split-screen on one PC, push-to-talk voice that sounds like a CB radio and fades with distance, and a car radio that plays your own music for your friends. Force feedback for MOZA, Fanatec, Logitech, Thrustmaster and Simagic wheels, night driving with warming-up halogens and HIDs, and weather that dries out as the field goes through.</p>
+                        <p>Stuff wears out: clutches fade, turbos heat-soak, radiators get holed and a money shift costs you the engine. Damage sticks, with dents and knocked-out alignment. Stages are procedurally generated with pace notes, and the PS1/PS2 look can be turned down if it hurts.</p>
+                        <p>Newest builds add a proper race track with laps, a garage computer with an ECU app for tuning your engine, parts that depend on each other, launch control and flat shift, six boss cars you can race and drive yourself, and early VR support.</p>
                         <ul class="project-facts">
-                            <li><b>25+</b> cars with physical specs</li>
+                            <li><b>60</b> cars, each with its own engine and quirks</li>
                             <li><b>14</b> road surfaces</li>
                         </ul>
                         <div class="sr-loops">
@@ -555,28 +507,9 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2026 Arthur Clack. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#education">Education</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#resume">Resume</a>
-                    <a href="#experience">Experience</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    </main>
 
-    <script src="script.js"></script>
     <script src="media.js" defer></script>
-    <script src="codec.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
     <script src="ringmenu.js" defer></script>
 </body>
