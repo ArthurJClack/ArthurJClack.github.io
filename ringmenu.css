@@ -41,7 +41,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: max(24px, env(safe-area-inset-top)) 20px max(24px, env(safe-area-inset-bottom));
+    padding: max(24px, env(safe-area-inset-top)) 20px max(56px, calc(env(safe-area-inset-bottom) + 44px));
     opacity: 0;
     transition: opacity 1s .4s;
     overflow-y: auto;
@@ -160,6 +160,20 @@
 .rm-card a:hover, .rm-card a:focus-visible, .rm-back:hover, .rm-back:focus-visible { color: #fff; background: rgba(127, 216, 255, .2); }
 .rm-back { margin-top: 14px; }
 
+/* always-on contact strip */
+.rm-quick {
+    position: absolute; left: 0; right: 0; bottom: max(10px, env(safe-area-inset-bottom)); z-index: 1;
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 6px 8px; padding: 0 12px;
+    opacity: 0; transition: opacity 1s .4s; pointer-events: none;
+}
+.rm-started .rm-quick { opacity: 1; }
+.rm-quick a {
+    pointer-events: auto; font: 600 13px/1 var(--rm-ui); letter-spacing: .2em; text-transform: uppercase; text-decoration: none;
+    color: var(--rm-glow); background: rgba(2, 10, 16, .6); border: 1px solid rgba(127, 216, 255, .45); padding: 8px 12px;
+}
+.rm-quick a:hover, .rm-quick a:focus-visible { color: #fff; background: rgba(127, 216, 255, .2); }
+.rm-quick a:first-child { border-color: var(--rm-amber); color: var(--rm-amber); }
+
 /* press-start gate */
 .rm-gate {
     position: absolute;
@@ -183,7 +197,7 @@
 
 @media (max-width: 820px) { .rm-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 520px) { .rm-cards { grid-template-columns: 1fr; } }
-@media (prefers-reduced-motion: reduce) { .rm-gate span { animation: none; } .rm-ui { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .rm-gate span { animation: none; } .rm-ui, .rm-quick { transition: none; } }
 
 /* short viewports: tighten the stack so title, all seven items and the info line fit without scrolling */
 @media (max-height: 860px) {
