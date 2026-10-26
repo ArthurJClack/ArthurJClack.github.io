@@ -1,0 +1,165 @@
+%-------------------------------------------------------------------------------
+% Arthur Clack - general resume
+% Layout follows Jake Gutierrez's resume template (MIT license):
+% https://github.com/jakegut/resume
+% Build: pdflatex resume.tex
+%-------------------------------------------------------------------------------
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% machine-readable text for ATS parsers
+\pdfgentounicode=1
+\hypersetup{pdftitle={Arthur Clack - Resume}, pdfauthor={Arthur Clack}}
+
+%-------------------------- macros --------------------------
+\newcommand{\resumeItem}[1]{\item\small{{#1 \vspace{-2pt}}}}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%===========================================================================
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Arthur Clack} \\ \vspace{1pt}
+    \footnotesize (253) 590-7380 $|$
+    \href{mailto:arthurjamesclack@gmail.com}{arthurjamesclack@gmail.com} $|$
+    \href{https://www.linkedin.com/in/arthurclack333/}{linkedin.com/in/arthurclack333} $|$
+    \href{https://github.com/ArthurJClack}{github.com/ArthurJClack} $|$
+    \href{https://arthurjclack.github.io}{arthurjclack.github.io}
+\end{center}
+
+%----------------------------- EDUCATION -----------------------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Washington}{Seattle, WA}
+      {B.S. Computer Science and Systems, Minor in Aeronautics and Aerospace}{Expected June 2027}
+    \resumeSubheading
+      {Tacoma Community College}{Tacoma, WA}
+      {A.A. Computer Science, GPA 3.9}{2020 -- 2022}
+    \resumeSubheading
+      {Year Up}{Seattle, WA}
+      {Technical Project Management Program}{Sep 2024}
+  \resumeSubHeadingListEnd
+
+%----------------------------- EXPERIENCE -----------------------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Software Developer Intern}{Jul 2025 -- Present}
+      {University of Washington -- Tech Startup Club}{Seattle, WA}
+      \resumeItemListStart
+        \resumeItem{Develop and maintain a web application for UW administrative staff from requirements to deployment using Go, TypeScript, PostgreSQL and AWS}
+        \resumeItem{Own the product backlog in Jira, turning stakeholder needs into technical requirements and user stories}
+        \resumeItem{Serve as Scrum Master, facilitating sprint ceremonies and coordinating development work in an Agile team}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Security / Onsite IT Support}{Sep 2024 -- Jan 2025}
+      {Blue Origin}{Kent, WA}
+      \resumeItemListStart
+        \resumeItem{Architected and deployed an internal web application integrated with proprietary access-control systems, serving \textbf{25,000+ employees} nationwide}
+        \resumeItem{Provided overnight IT support for facility infrastructure, troubleshooting issues to minimize downtime}
+        \resumeItem{Monitored real-time security systems across multiple sites for safety and compliance}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Contract Specialist Intern II}{Mar 2023 -- Dec 2023}
+      {King County Procurement Office}{Seattle, WA}
+      \resumeItemListStart
+        \resumeItem{Led \textbf{4 interns} to build a compliance database from scratch, reaching full regulatory compliance in \textbf{3 months}}
+        \resumeItem{Independently drafted and approved \textbf{600+ procurement contracts} with zero compliance issues}
+        \resumeItem{Designed a new onboarding process that cut ramp-up time from \textbf{2 months to 3 weeks}}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%----------------------------- PROJECTS -----------------------------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Shitbox Rally} $|$ \emph{Godot 4, GDScript, Jolt Physics, C++, Steamworks}}{Public release}
+          \resumeItemListStart
+            \resumeItem{Built a rally game's vehicle physics from scratch: raycast suspension, slip-based tire model, simulated clutch, gearboxes and differentials across \textbf{60 cars}}
+            \resumeItem{Procedurally generated stages (0.5--20 km) across 5 biomes and \textbf{14 road surfaces}; online multiplayer via Steam lobbies with proximity voice}
+            \resumeItem{Wrote a headless C++ tool on the open-source Engine Simulator to dyno-test engines and record sound loops}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{WA Commute Crash Risk} $|$ \emph{JavaScript, Leaflet, Open Data APIs, Statistics}}{Live}
+          \resumeItemListStart
+            \resumeItem{Mapped every fatal WA traffic crash 2010--2024 (NHTSA data); routes a commute and flags its deadliest miles}
+            \resumeItem{Grades alternate routes, adjusting for road type, crash history, time of day, weather and driver habits}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{ApplyBot} $|$ \emph{Python, LLM APIs, Playwright, SQLite, MCP}}{In progress}
+          \resumeItemListStart
+            \resumeItem{Pulls postings from Greenhouse, Lever and Ashby, scores fit, tailors truthful one-page resumes and auto-fills forms}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%----------------------------- SKILLS -----------------------------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: C++, C\#, Python, Go, TypeScript, JavaScript, Java, SQL, GDScript} \\
+     \textbf{Frameworks \& Engines}{: Godot 4, Unreal Engine 4/5, Jolt Physics, Node.js, Leaflet, Steamworks} \\
+     \textbf{Tools \& Cloud}{: Git/GitHub, AWS, PostgreSQL, Linux, Jira, Blender} \\
+     \textbf{Practices}{: Agile/Scrum, Requirements Gathering, Networking \& Replication, Physics Simulation} \\
+     \textbf{Certifications}{: AWS Certified Cloud Practitioner, Scrum.org Certified Scrum Master}
+    }}
+ \end{itemize}
+
+\end{document}
