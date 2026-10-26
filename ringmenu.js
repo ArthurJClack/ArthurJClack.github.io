@@ -52,6 +52,7 @@
         '<canvas class="rm-gl" aria-hidden="true"></canvas><div class="rm-shade"></div><div class="rm-scan"></div>' +
         '<div class="rm-ui"><h1>ARTHUR<br> CLACK</h1><div class="rm-sub">SOFTWARE DEVELOPER</div>' +
         '<div class="rm-menu" id="rmMenu"></div><div class="rm-panel" id="rmPanel"></div><div class="rm-cards" id="rmCards"></div></div>' +
+        '<nav class="rm-quick" aria-label="Quick links"><a href="resume.pdf" target="_blank" rel="noopener">Resume</a><a href="mailto:arthurjamesclack@gmail.com">Email</a><a href="https://www.linkedin.com/in/arthurclack333/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/ArthurJClack" target="_blank" rel="noopener">GitHub</a></nav>' +
         '<div class="rm-gate" id="rmGate" role="button" tabindex="0" aria-label="Start"><b>ARTHUR CLACK</b><span>TAP TO START</span></div>';
     document.body.appendChild(root);
 
@@ -97,9 +98,8 @@
     bar.appendChild(pbBack);
     if (pages) pages.insertBefore(bar, pages.firstChild);
 
-    function goTo(target) {
-        var node = pages && pages.querySelector(target);
-        if (!node) return;
+    var pushed = false;
+    function openPage(node) {
         Array.prototype.forEach.call(pages.querySelectorAll('section'), function (s) { s.classList.toggle('on', s === node); });
         pages.classList.add('on');
         pages.scrollTop = 0;
@@ -107,12 +107,31 @@
         root.querySelector('.rm-ui').setAttribute('inert', '');
         pbBack.focus();
     }
-    function closePage() {
+    function hidePage() {
         pageOpen = false;
         pages.classList.remove('on');
         root.querySelector('.rm-ui').removeAttribute('inert');
         if (menu.firstChild) menu.firstChild.focus();
     }
+    function goTo(target) {
+        var node = pages && pages.querySelector(target);
+        if (!node) return;
+        if (location.hash !== target) { try { history.pushState(null, '', target); pushed = true; } catch (e) {} }
+        openPage(node);
+    }
+    function closePage() {
+        if (location.hash && pushed) { history.back(); return; }
+        if (location.hash) { try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {} }
+        hidePage();
+    }
+    // deep links (#projects, #resume ...) and the browser back button
+    function fromHash(fresh) {
+        var node = null;
+        try { node = pages && location.hash.length > 1 && pages.querySelector(location.hash); } catch (e) {}
+        if (node && node.tagName === 'SECTION') { if (fresh) startGate(); openPage(node); }
+        else if (pageOpen) hidePage();
+    }
+    window.addEventListener('popstate', function () { fromHash(false); });
     pbBack.addEventListener('click', closePage);
 
     function render(list, isSub) {
@@ -281,4 +300,5 @@
     /* ---------- boot ---------- */
     render(TREE, false);
     startRender();
+    fromHash(true);
 }());
