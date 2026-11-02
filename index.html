@@ -35,7 +35,7 @@
     <meta name="theme-color" content="#02060a">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Orbitron:wght@500;700&family=Rajdhani:wght@500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@500;600&display=swap">
     <script>document.documentElement.classList.add('js')</script>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="halo.css">
@@ -43,6 +43,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <noscript><nav style="padding:12px 16px;border-bottom:1px solid #2f8fd0;font:600 16px Rajdhani,Arial,sans-serif;letter-spacing:.1em;text-align:center">JavaScript is off, so here is the plain page. <a href="#about">About</a> · <a href="#experience">Experience</a> · <a href="#skills">Skills</a> · <a href="#projects">Projects</a> · <a href="#resume">Resume</a> · <a href="#contact">Contact</a></nav></noscript>
     <main class="pages" id="pages" aria-label="Pages">
     <!-- About Section -->
     <section id="about" class="about">
@@ -284,10 +285,13 @@
                     <div class="project-content">
                         <h3>ApplyBot</h3>
                         <p class="project-status">In progress</p>
-                        <p>An AI-powered job application assistant. You give it one profile file (resume, LinkedIn summary, notes in any format) and it tailors applications from there.</p>
-                        <p>It drafts answers to "why us" and behavioural questions in your own voice, keeps your facts straight across applications, and cuts the repetitive part of a job search down to review-and-send.</p>
+                        <p>A job application assistant with a desktop app. It finds postings from sources like Greenhouse, Lever and Ashby, scores how well they fit, and tailors a resume and cover letter from one plain-text profile file. A code-level guard rejects invented facts.</p>
+                        <p>It fills in the application form in a real browser, saves answers for next time, and asks you before submitting. Works with OpenAI, Anthropic, Gemini or local Ollama models, or with no AI at all, and can be driven from Claude over MCP.</p>
                         <div class="experience-skills">
-                            <span>Python</span><span>LLM APIs</span><span>Automation</span><span>Prompt design</span>
+                            <span>Python</span><span>Playwright</span><span>LLM APIs</span><span>MCP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/ArthurJClack/applybot" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-github"></i> Code</a>
                         </div>
                     </div>
                 </article>
@@ -297,9 +301,9 @@
                     </div>
                     <div class="project-content">
                         <h3>wetwaresuite</h3>
-                        <p class="project-status">In progress</p>
-                        <p>An all-in-one, lightweight software suite: CAD and blueprints, photo and paint, 3D modeling, audio, video, game assets, office documents and a universal file toolkit, all on one shared core.</p>
-                        <p>It ships as small standalone apps so you install only what you need, and they hand work to each other, like a texture from the image app onto a model. Everything works offline with no account, and Claude can drive every app over MCP. Installers for Windows, macOS and Linux, GPL-3.0.</p>
+                        <p class="project-status live">v0.2.2 released</p>
+                        <p>An all-in-one, lightweight software suite: CAD and blueprints, 3D printing, photo and paint, 3D modeling and sculpting, audio, video, game assets, office documents, circuits, offline maps and a universal file toolkit, all on one shared core.</p>
+                        <p>It ships as 13 small standalone apps so you install only what you need, and they hand work to each other, like a texture from the image app onto a model. Everything works offline with no account, and Claude can drive every app over MCP. Installers for Windows, macOS and Linux, GPL-3.0.</p>
                         <div class="experience-skills">
                             <span>C++20</span><span>CMake</span><span>Rust</span><span>MCP</span><span>3D geometry</span><span>Cross-platform</span>
                         </div>
@@ -324,7 +328,7 @@
                     </div>
                     <div class="project-content">
                         <h3>Shitbox Rally</h3>
-                        <p class="project-status live">v0.7.6.25 released</p>
+                        <p class="project-status live">v0.7.6.35 released</p>
                         <figure class="sr-hero">
                             <video class="sr-video" data-hero muted loop playsinline preload="none" poster="media/shitbox-rally/hero-still.jpg" width="1280" height="720" aria-label="Shitbox Rally gameplay: a modded silver 2002 WRX throwing gravel on a forest stage">
                                 <source data-src="media/shitbox-rally/hero.mp4" type="video/mp4">
@@ -336,10 +340,11 @@
                         <p>A rally racing game about tired old cars on procedurally generated stages, with a PS1/PS2-era look. Built from the physics up in Godot 4 with Jolt: raycast suspension, a slip-ratio/slip-angle tyre model, simulated clutch, gearboxes and differentials, and engine sounds rendered from real torque curves.</p>
                         <p>Steam lobbies or join by IP, split-screen on one PC, push-to-talk voice that sounds like a CB radio and fades with distance, and a car radio that plays your own music for your friends. Force feedback for MOZA, Fanatec, Logitech, Thrustmaster and Simagic wheels, night driving with warming-up halogens and HIDs, and weather that dries out as the field goes through.</p>
                         <p>Stuff wears out: clutches fade, turbos heat-soak, radiators get holed and a money shift costs you the engine. Damage sticks, with dents and knocked-out alignment. Stages are procedurally generated with pace notes, and the PS1/PS2 look can be turned down if it hurts.</p>
-                        <p>Newest builds add a proper race track with laps, a garage computer with an ECU app for tuning your engine, parts that depend on each other, launch control and flat shift, six boss cars you can race and drive yourself, and early VR support.</p>
+                        <p>Newest builds add a proper race track with laps, six boss cars you can race and drive yourself, early VR support, and a garage computer with an ECU app for tuning your engine, a repair guide that highlights parts on the car, and an AI Lab where driving brains learn to drive.</p>
                         <ul class="project-facts">
                             <li><b>60</b> cars, each with its own engine and quirks</li>
                             <li><b>14</b> road surfaces</li>
+                            <li><b>6</b> boss cars you can drive</li>
                         </ul>
                         <div class="sr-loops">
                             <figure>
@@ -401,7 +406,7 @@
                         <h3>WA Commute Crash Risk</h3>
                         <p class="project-status live">Live</p>
                         <p>Maps every fatal traffic crash in Washington from 2010 to 2024 using NHTSA data and estimates your odds of a crash on your own commute.</p>
-                        <p>Enter two addresses and it routes the drive, grades each alternate route, and flags the deadliest one-mile stretches. Results adjust for road type, local crash history, time of day, weather and driver habits, based on published traffic-safety research.</p>
+                        <p>View crashes as points or a heat map and filter by cause. Enter two addresses and it routes the drive, grades each alternate route, and flags the deadliest one-mile stretches. Results adjust for road type, local crash history, time of day, weather and driver habits, based on published traffic-safety research.</p>
                         <div class="experience-skills">
                             <span>JavaScript</span><span>Leaflet</span><span>Open Data APIs</span><span>Statistics</span>
                         </div>

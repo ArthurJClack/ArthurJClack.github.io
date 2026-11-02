@@ -9,23 +9,23 @@
     // Each entry: [label, line 1, line 2, children?, url?]. 'target' jumps to a page section.
     var TREE = [
         { label: 'Projects', cards: true, target: '#projects' },
-        { label: 'Experience', target: '#experience', l1: 'Where he has worked.', l2: 'UW, Blue Origin, King County.', kids: [
+        { label: 'Experience', target: '#experience', l1: 'Where I have worked.', l2: 'UW, Blue Origin, King County.', kids: [
             ['UW', 'Software Developer Intern, July 2025 to now.', 'Go, TypeScript, PostgreSQL and AWS. Requirements to deployment on a web app for UW staff.'],
             ['Blue Origin', 'Security and Onsite IT Support, Sep 2024 to Jan 2025.', 'Built an internal web app tied to access-control systems, used by 25,000+ employees.'],
             ['King County', 'Contract Specialist Intern II, Mar to Dec 2023.', '600+ contracts with zero compliance issues. Led 4 interns on a compliance database.']
         ] },
-        { label: 'Skills', target: '#skills', l1: 'Loadout.', l2: 'Languages, engines, tools.', kids: [
+        { label: 'Skills', target: '#skills', l1: 'What I work with.', l2: 'Languages, engines, tools.', kids: [
             ['Languages', 'C++, C#, Python, Go, TypeScript, JavaScript, Java, GDScript, SQL.', ''],
             ['Engines', 'Unreal Engine 4/5, Godot 4, Jolt Physics, Steamworks.', 'Leaflet and Node.js too.'],
             ['Tools', 'Git, AWS, PostgreSQL, Jira, Blender, CAD and 3D printing, Linux.', ''],
             ['Practices', 'Agile, networking and replication, physics simulation.', 'Procedural generation, shaders, requirements gathering.']
         ] },
-        { label: 'About', target: '#about', l1: 'Briefing.', l2: 'Student, builder.', kids: [
+        { label: 'About', target: '#about', l1: 'Who I am.', l2: 'Student, builder.', kids: [
             ['Bio', 'Computer Science and Systems at the University of Washington, class of 2027.', 'Heading toward embedded and safety-critical software.'],
             ['Education', 'B.S. Computer Science and Systems, UW, expected spring 2027.', 'A.A. Computer Science, Tacoma Community College, GPA 3.9.', null, '#education'],
             ['Hobbies', 'Muay Thai, working on cars, guitar.', '']
         ] },
-        { label: 'Contact', target: '#contact', l1: 'Comms.', l2: 'Open to software and embedded roles.', kids: [
+        { label: 'Contact', target: '#contact', l1: 'Get in touch.', l2: 'Open to software and embedded roles.', kids: [
             ['Email', 'arthurjamesclack@gmail.com', 'Seattle or remote.', 'mailto:arthurjamesclack@gmail.com'],
             ['GitHub', 'github.com/ArthurJClack', 'Opens in a new tab.', 'https://github.com/ArthurJClack'],
             ['LinkedIn', 'linkedin.com/in/arthurclack333', 'Opens in a new tab.', 'https://www.linkedin.com/in/arthurclack333/']
@@ -34,11 +34,11 @@
     ];
 
     var PROJECTS = [
-        { n: 'Shitbox Rally', st: 'v0.7.6.25 released', d: 'A rally game about tired old cars on endless procedurally generated stages with pace notes and a PS1/PS2-era look. Built from the physics up in Godot 4 with Jolt: 14 road surfaces, real roads from California, Colorado, the Alps and Washington, parts that wear out and damage that sticks, night driving and weather. Steam and LAN multiplayer, split-screen, CB-radio voice chat, a car radio for your friends, and force feedback for MOZA, Fanatec, Logitech, Thrustmaster and Simagic wheels. 60 cars, a race track with laps, ECU tuning.', t: ['Godot 4', 'Jolt', 'Steamworks', 'Shaders'], l: [['Download', 'https://github.com/ArthurJClack/shitboxrally-releases/releases/latest'], ['Code', 'https://github.com/ArthurJClack/shitbox-rally']] },
-        { n: 'WA Commute Crash Risk', st: 'Live', d: 'Maps every fatal traffic crash in Washington from 2010 to 2024 using NHTSA data and estimates your odds of a crash on your own commute.', t: ['JavaScript', 'Leaflet', 'Open data'], l: [['Live app', 'https://arthurjclack.github.io/wa-commute-crash-risk/'], ['Code', 'https://github.com/ArthurJClack/wa-commute-crash-risk']] },
-        { n: 'ApplyBot', st: 'In progress', d: 'An AI job application assistant. Give it one profile file (resume, LinkedIn summary, notes in any format) and it tailors each application from there: drafts answers to "why us" and behavioural questions in your own voice, keeps your facts straight across applications, and cuts the repetitive part of a job search down to review-and-send.', t: ['Python', 'LLM APIs', 'Automation', 'Prompt design'], l: [] },
+        { n: 'Shitbox Rally', st: 'v0.7.6.35 released', d: 'A rally game about tired old cars on endless procedurally generated stages with pace notes and a PS1/PS2-era look. Built from the physics up in Godot 4 with Jolt: 14 road surfaces, real roads from California, Colorado, the Alps and Washington, parts that wear out and damage that sticks, night driving and weather. Steam and LAN multiplayer, split-screen, CB-radio voice chat, a car radio for your friends, and force feedback for MOZA, Fanatec, Logitech, Thrustmaster and Simagic wheels. 60 cars, a race track with laps, and a garage computer with an ECU tuning app, a repair guide and an AI Lab where driving brains learn to drive.', t: ['Godot 4', 'Jolt', 'Steamworks', 'Shaders'], l: [['Download', 'https://github.com/ArthurJClack/shitboxrally-releases/releases/latest'], ['Releases', 'https://github.com/ArthurJClack/shitboxrally-releases']] },
+        { n: 'WA Commute Crash Risk', st: 'Live', d: 'Maps every fatal traffic crash in Washington from 2010 to 2024 using NHTSA data and estimates your odds of a crash on your own commute. Map it as points or a heat map, filter by cause, and compare alternate routes.', t: ['JavaScript', 'Leaflet', 'Open data'], l: [['Live app', 'https://arthurjclack.github.io/wa-commute-crash-risk/'], ['Code', 'https://github.com/ArthurJClack/wa-commute-crash-risk']] },
+        { n: 'ApplyBot', st: 'In progress', d: 'A job application assistant with a desktop app. It finds postings from sources like Greenhouse, Lever and Ashby, scores the fit, tailors a resume and cover letter from one plain-text profile file (a code-level guard rejects invented facts), and fills in the application form in a real browser. You review before anything is sent. Works with OpenAI, Anthropic, Gemini or local Ollama models, or with no AI at all.', t: ['Python', 'Playwright', 'LLM APIs', 'MCP'], l: [['Code', 'https://github.com/ArthurJClack/applybot']] },
         { n: 'AUTO3D', st: 'In progress', d: 'A website for sharing 3D models of car parts, built for 3D printing and fabrication.', t: ['Web', 'CAD', '3D printing'], l: [['Code', 'https://github.com/ArthurJClack/AUTO3D']] },
-        { n: 'wetwaresuite', st: 'In progress', d: 'An all-in-one, lightweight software suite: CAD and blueprints, photo and paint, 3D modeling and sculpting, audio, video, game assets, office, circuits and a universal file toolkit. Small standalone apps on one shared core that hand work to each other. Offline, no account, installers for Windows, macOS and Linux, and Claude can drive every app over MCP. GPL-3.0.', t: ['C++20', 'Rust', 'MCP'], l: [['Download', 'https://github.com/ArthurJClack/wetwaresuite/releases/latest'], ['Code', 'https://github.com/ArthurJClack/wetwaresuite']] },
+        { n: 'wetwaresuite', st: 'v0.2.2 released', d: 'An all-in-one, lightweight software suite: CAD and blueprints, 3D printing, photo and paint, 3D modeling and sculpting, audio, video, game assets, office, circuits, maps and a universal file toolkit. 13 small standalone apps on one shared core that hand work to each other. Offline, no account, installers for Windows, macOS and Linux, and Claude can drive every app over MCP. GPL-3.0.', t: ['C++20', 'Rust', 'MCP'], l: [['Download', 'https://github.com/ArthurJClack/wetwaresuite/releases/latest'], ['Code', 'https://github.com/ArthurJClack/wetwaresuite']] },
         { n: 'Coming soon', st: '', d: 'Something new is in the garage. Check back shortly.', t: [], l: [], soon: true }
     ];
 
@@ -217,9 +217,10 @@
     var renderer, scene, cam, ring, planet, rafId = 0, t0 = 0, px = 0, py = 0, tx = 0, ty = 0, zoom = 0, ready = false;
 
     function buildScene() {
-        if (ready || !window.THREE) return;
+        if (ready) return;
+        if (!window.THREE) { noGL(); return; }
         var THREE = window.THREE, cv = root.querySelector('.rm-gl');
-        try { renderer = new THREE.WebGLRenderer({ canvas: cv, antialias: true }); } catch (e) { return; }
+        try { renderer = new THREE.WebGLRenderer({ canvas: cv, antialias: true }); } catch (e) { noGL(); return; }
         renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
         scene = new THREE.Scene(); scene.background = new THREE.Color(0x02060a);
         cam = new THREE.PerspectiveCamera(48, 1, .1, 400);
@@ -293,6 +294,13 @@
         planet.rotation.y = t * .02;
         renderer.render(scene, cam);
     }
+    // no WebGL (or three.js failed to load): the menu still works over a plain starfield gradient
+    function noGL() { root.classList.add('rm-nogl'); }
+    var hiddenAt = 0;
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) { hiddenAt = performance.now(); stopRender(); }
+        else if (ready) { t0 += performance.now() - hiddenAt; if (!rafId) frame(); }
+    });
     function startRender() { buildScene(); if (ready && !rafId) { t0 = performance.now(); frame(); } }
     function stopRender() { if (rafId) { cancelAnimationFrame(rafId); rafId = 0; } }
     window.addEventListener('resize', resize);
