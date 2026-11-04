@@ -14,11 +14,13 @@
             ['Blue Origin', 'Security and Onsite IT Support, Sep 2024 to Jan 2025.', 'Built an internal web app tied to access-control systems, used by 25,000+ employees.'],
             ['King County', 'Contract Specialist Intern II, Mar to Dec 2023.', '600+ contracts with zero compliance issues. Led 4 interns on a compliance database.']
         ] },
-        { label: 'Skills', target: '#skills', l1: 'What I work with.', l2: 'Languages, engines, tools.', kids: [
+        { label: 'Skills', target: '#skills', l1: 'What I work with.', l2: 'Languages, engines, ML, crypto.', kids: [
             ['Languages', 'C++, C#, Python, Go, TypeScript, JavaScript, Java, GDScript, SQL.', ''],
             ['Engines', 'Unreal Engine 4/5, Godot 4, Jolt Physics, Steamworks.', 'Leaflet and Node.js too.'],
             ['Tools', 'Git, AWS, PostgreSQL, Jira, Blender, CAD and 3D printing, Linux.', ''],
-            ['Practices', 'Agile, networking and replication, physics simulation.', 'Procedural generation, shaders, requirements gathering.']
+            ['Practices', 'Agile, networking and replication, physics simulation.', 'Procedural generation, shaders, requirements gathering.'],
+            ['Machine learning', 'Training small driving AIs, scoring and ranking with models, working with LLM APIs.', 'Shitbox Rally AI Lab and ApplyBot are where I use it.'],
+            ['Cryptography', 'Hashing, encryption, signatures and keeping secrets safe in code.', 'Studying how it works and how to use it without getting it wrong.']
         ] },
         { label: 'About', target: '#about', l1: 'Who I am.', l2: 'Student, builder.', kids: [
             ['Bio', 'Computer Science and Systems at the University of Washington, class of 2027.', 'Heading toward embedded and safety-critical software.'],
@@ -39,7 +41,7 @@
         { n: 'ApplyBot', st: 'In progress', d: 'A job application assistant with a desktop app. It finds postings from sources like Greenhouse, Lever and Ashby, scores the fit, tailors a resume and cover letter from one plain-text profile file (a code-level guard rejects invented facts), and fills in the application form in a real browser. You review before anything is sent. Works with OpenAI, Anthropic, Gemini or local Ollama models, or with no AI at all.', t: ['Python', 'Playwright', 'LLM APIs', 'MCP'], l: [['Code', 'https://github.com/ArthurJClack/applybot']] },
         { n: 'AUTO3D', st: 'In progress', d: 'A website for sharing 3D models of car parts, built for 3D printing and fabrication.', t: ['Web', 'CAD', '3D printing'], l: [['Code', 'https://github.com/ArthurJClack/AUTO3D']] },
         { n: 'wetwaresuite', st: 'v0.2.2 released', d: 'An all-in-one, lightweight software suite: CAD and blueprints, 3D printing, photo and paint, 3D modeling and sculpting, audio, video, game assets, office, circuits, maps and a universal file toolkit. 13 small standalone apps on one shared core that hand work to each other. Offline, no account, installers for Windows, macOS and Linux, and Claude can drive every app over MCP. GPL-3.0.', t: ['C++20', 'Rust', 'MCP'], l: [['Download', 'https://github.com/ArthurJClack/wetwaresuite/releases/latest'], ['Code', 'https://github.com/ArthurJClack/wetwaresuite']] },
-        { n: 'Coming soon', st: '', d: 'Something new is in the garage. Check back shortly.', t: [], l: [], soon: true }
+        { n: 'ML and cryptography', st: 'Studying', d: 'Two areas I am digging into next. For machine learning, I already train small driving AIs in Shitbox Rally and use language models inside ApplyBot. For cryptography, I am learning how hashing, encryption and signatures actually work, and how to use them safely in real software.', t: ['Machine learning', 'Cryptography', 'Python'], l: [] }
     ];
 
     /* ---------- DOM ---------- */
