@@ -1220,3 +1220,8 @@ section {
 .sr-stills {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
 }
+
+/* An odd card out just before the featured card spans the row, so there's no empty slot */
+.artifacts-grid .project-card:not(.featured):nth-child(odd):nth-last-child(2) {
+    grid-column: 1 / -1;
+}
