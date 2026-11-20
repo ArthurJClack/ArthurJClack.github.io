@@ -14,11 +14,13 @@
             ['Blue Origin', 'Security and Onsite IT Support, Sep 2024 to Jan 2025.', 'Built an internal web app tied to access-control systems, used by 25,000+ employees.'],
             ['King County', 'Contract Specialist Intern II, Mar to Dec 2023.', '600+ contracts with zero compliance issues. Led 4 interns on a compliance database.']
         ] },
-        { label: 'Skills', target: '#skills', l1: 'What I work with.', l2: 'Languages, engines, tools.', kids: [
+        { label: 'Skills', target: '#skills', l1: 'What I work with.', l2: 'Languages, engines, ML, crypto.', kids: [
             ['Languages', 'C++, C#, Python, Go, TypeScript, JavaScript, Java, GDScript, SQL.', ''],
             ['Engines', 'Unreal Engine 4/5, Godot 4, Jolt Physics, Steamworks.', 'Leaflet and Node.js too.'],
             ['Tools', 'Git, AWS, PostgreSQL, Jira, Blender, CAD and 3D printing, Linux.', ''],
-            ['Practices', 'Agile, networking and replication, physics simulation.', 'Procedural generation, shaders, requirements gathering.']
+            ['Practices', 'Agile, networking and replication, physics simulation.', 'Procedural generation, shaders, requirements gathering.'],
+            ['Machine learning', 'Teaching cars to drive, weight-space programming, tuning neural nets.', 'Shitbox Rally AI Lab is where it lives; ApplyBot uses language models too.'],
+            ['Cryptography', 'Hashing, encryption, signatures and keeping secrets safe in code.', 'Studying how it works and how to use it without getting it wrong.']
         ] },
         { label: 'About', target: '#about', l1: 'Who I am.', l2: 'Student, builder.', kids: [
             ['Bio', 'Computer Science and Systems at the University of Washington, class of 2027.', 'Heading toward embedded and safety-critical software.'],
@@ -40,7 +42,8 @@
         { n: 'AUTO3D', st: 'In progress', d: 'A website for sharing 3D models of car parts, built for 3D printing and fabrication.', t: ['Web', 'CAD', '3D printing'], l: [['Code', 'https://github.com/ArthurJClack/AUTO3D']] },
         { n: 'wetwaresuite', st: 'v0.2.2 released', d: 'An all-in-one, lightweight software suite: CAD and blueprints, 3D printing, photo and paint, 3D modeling and sculpting, audio, video, game assets, office, circuits, maps and a universal file toolkit. 13 small standalone apps on one shared core that hand work to each other. Offline, no account, installers for Windows, macOS and Linux, and Claude can drive every app over MCP. GPL-3.0.', t: ['C++20', 'Rust', 'MCP'], l: [['Download', 'https://github.com/ArthurJClack/wetwaresuite/releases/latest'], ['Code', 'https://github.com/ArthurJClack/wetwaresuite']] },
         { n: 'Articulate', st: 'Team of 2', d: 'A pronunciation practice app built for a friend who grew up speaking Ukrainian and wants a closer American accent. Practice by reading, listening or speaking, and a speech model in the browser colors each sound green to red. Recordings never leave the phone. I built the practice side: Speak, Listen and Read.', t: ['JavaScript', 'ONNX Runtime Web', 'Speech scoring'], l: [['Code', 'https://github.com/iiSurf/articulate']] },
-        { n: 'SECRET (working title)', st: 'In development', d: 'A Pacific Northwest cyberpunk CRPG in the spirit of Baldur\'s Gate 3, in Godot 4 with a PS1-era look. So far: Seattle\'s Pioneer Square from real map and elevation data with about 250 people on daily routines and live traffic, turn-based fights that freeze the street, guns with real ballistics, car chases with Shitbox Rally\'s cars, and a BG3-style inventory with 17 abilities.', t: ['Godot 4', 'OpenStreetMap', 'Turn-based'], l: [] }
+        { n: 'SECRET (working title)', st: 'In development', d: 'A Pacific Northwest cyberpunk CRPG in the spirit of Baldur\'s Gate 3, in Godot 4 with a PS1-era look. So far: Seattle\'s Pioneer Square from real map and elevation data with about 250 people on daily routines and live traffic, turn-based fights that freeze the street, guns with real ballistics, car chases with Shitbox Rally\'s cars, and a BG3-style inventory with 17 abilities.', t: ['Godot 4', 'OpenStreetMap', 'Turn-based'], l: [] },
+        { n: 'ML and cryptography', st: 'Hands-on', d: 'I teach cars to drive with machine learning: small neural nets that learn from the road, tuned until they hold a line. I also work in weight space, shaping a network by programming its weights directly instead of only training them. Cryptography is the other thing I am studying, learning how hashing, encryption and signatures work and how to use them safely in real software.', t: ['Neural networks', 'Weight-space programming', 'Cryptography'], l: [] }
     ];
 
     /* ---------- DOM ---------- */
