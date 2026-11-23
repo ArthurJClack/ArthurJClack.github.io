@@ -1225,3 +1225,30 @@ section {
 .artifacts-grid .project-card:not(.featured):nth-child(odd):nth-last-child(2) {
     grid-column: 1 / -1;
 }
+
+/* SECRET card preview: one big frame, three small ones */
+.crpg-hero {
+    margin: 4px 0 10px;
+}
+
+.crpg-hero img,
+.crpg-thumbs img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid rgba(127, 216, 255, .4);
+}
+
+.crpg-hero figcaption,
+.crpg-thumbs figcaption {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 6px;
+}
+
+.crpg-thumbs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-bottom: 16px;
+}
