@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arthur Clack | Software Developer</title>
-    <meta name="description" content="Arthur Clack: software developer and Computer Science student at the University of Washington. Shipped a physics-based rally game, built web apps for Blue Origin and UW. Open to software and embedded roles.">
+    <meta name="description" content="Arthur Clack: software developer and Computer Science student at the University of Washington Tacoma. Shipped a physics-based rally game, built web apps for Blue Origin and UW. Open to software and embedded roles.">
     <meta property="og:title" content="Arthur Clack | Software Developer">
-    <meta property="og:description" content="Software developer and UW Computer Science student in Seattle. Games, web apps and tools. Open to software and embedded roles.">
+    <meta property="og:description" content="Software developer and UW Tacoma Computer Science student in Seattle. Games, web apps and tools. Open to software and embedded roles.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://arthurjclack.github.io/og-image.png">
     <meta property="og:image:width" content="1200">
@@ -26,7 +26,7 @@
       "jobTitle": "Software Developer",
       "address": { "@type": "PostalAddress", "addressLocality": "Seattle", "addressRegion": "WA", "addressCountry": "US" },
       "alumniOf": [
-        { "@type": "CollegeOrUniversity", "name": "University of Washington" },
+        { "@type": "CollegeOrUniversity", "name": "University of Washington Tacoma" },
         { "@type": "CollegeOrUniversity", "name": "Tacoma Community College" }
       ],
       "sameAs": ["https://github.com/ArthurJClack", "https://www.linkedin.com/in/arthurclack333/"]
@@ -58,7 +58,7 @@
                 </div>
                 <div class="about-text">
                     <h3>Hi, I'm Arthur Clack</h3>
-                    <p>I'm a Computer Science &amp; Systems student at the University of Washington, graduating in spring 2027.
+                    <p>I'm a Computer Science &amp; Systems student at the University of Washington Tacoma, graduating in spring 2027.
                     I've written software at Blue Origin, led a team of interns at King County, and I'm currently
                     a developer on a web app for UW staff.</p>
                     <p>On my own time I build a rally game from the physics up: suspension, tyre model, drivetrain, procedural roads
@@ -67,7 +67,7 @@
                     <p>When I'm not coding, you can find me in a Muay Thai gym, working on cars, or playing guitar.</p>
                     <ul class="about-facts">
                         <li><i class="fas fa-location-dot"></i> Seattle, WA</li>
-                        <li><i class="fas fa-graduation-cap"></i> UW, class of 2027</li>
+                        <li><i class="fas fa-graduation-cap"></i> UW Tacoma, class of 2027</li>
                         <li><i class="fas fa-certificate"></i> AWS Cloud Practitioner</li>
                         <li><i class="fas fa-briefcase"></i> Open to internships and new-grad roles</li>
                     </ul>
@@ -88,7 +88,7 @@
                     </div>
                     <div class="education-content">
                         <h3>Bachelor of Science in Computer Science &amp; Systems</h3>
-                        <h4>University of Washington</h4>
+                        <h4>University of Washington Tacoma</h4>
                         <p class="date">2025 - Expected Spring 2027</p>
                         <p>Data Structures and Algorithms | Database Management | Software Engineering</p>
                     </div>
@@ -158,18 +158,6 @@
                             <span>Agile</span><span>Networking &amp; replication</span><span>Physics simulation</span><span>Procedural generation</span><span>Shaders</span><span>Requirements gathering</span>
                         </div>
                     </div>
-                    <div class="skills-group">
-                        <h4><i class="fas fa-brain"></i> Machine learning</h4>
-                        <div class="experience-skills">
-                            <span>Teaching cars to drive</span><span>Weight-space programming</span><span>Tuning neural nets</span><span>LLM APIs</span>
-                        </div>
-                    </div>
-                    <div class="skills-group">
-                        <h4><i class="fas fa-lock"></i> Cryptography</h4>
-                        <div class="experience-skills">
-                            <span>Hashing</span><span>Encryption</span><span>Digital signatures</span><span>Secrets handling</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -209,7 +197,7 @@
                     </div>
                     <div class="experience-content">
                         <h3>Software Developer Intern</h3>
-                        <h4>University of Washington</h4>
+                        <h4>University of Washington &middot; Tech Startup Club</h4>
                         <p class="date">July 2025 - Present</p>
                         <p>Develop and maintain a web application for UW administrative staff, from requirements to deployment.</p>
                         <p>Own the product backlog in Jira: turn stakeholder needs into technical requirements and user stories.</p>
@@ -273,55 +261,111 @@
 
             <h3 class="subsection-title"><i class="fas fa-box-open"></i> Artifacts</h3>
             <div class="projects-grid artifacts-grid">
-                <article class="project-card">
+                <article class="project-card featured">
                     <div class="project-header">
-                        <i class="fas fa-window-maximize"></i>
+                        <i class="fas fa-flag-checkered"></i>
                     </div>
                     <div class="project-content">
-                        <h3>This Portfolio</h3>
+                        <h3>Shitbox Rally</h3>
+                        <p class="project-status live">v0.7.6.35 released</p>
+                        <figure class="sr-hero">
+                            <video class="sr-video" data-hero muted loop playsinline preload="none" poster="media/shitbox-rally/hero-still.jpg" width="1280" height="720" aria-label="Shitbox Rally gameplay: a modded silver 2002 WRX throwing gravel on a forest stage">
+                                <source data-src="media/shitbox-rally/hero.mp4" type="video/mp4">
+                                <source data-src="media/shitbox-rally/hero.webm" type="video/webm">
+                            </video>
+                            <button class="sr-sound" type="button" aria-pressed="false"><i class="fas fa-volume-xmark"></i> <span>Sound off</span></button>
+                            <figcaption>Tired old cars, real physics, roads that never repeat. <span class="sr-hint">Hover or tap to play.</span></figcaption>
+                        </figure>
+                        <p>A rally racing game about tired old cars on procedurally generated stages, with a PS1/PS2-era look. Built from the physics up in Godot 4 with Jolt: raycast suspension, a slip-ratio/slip-angle tyre model, simulated clutch, gearboxes and differentials, and engine sounds rendered from real torque curves.</p>
+                        <p>Steam lobbies or join by IP, split-screen on one PC, push-to-talk voice that sounds like a CB radio and fades with distance, and a car radio that plays your own music for your friends. Force feedback for MOZA, Fanatec, Logitech, Thrustmaster and Simagic wheels, night driving with warming-up halogens and HIDs, and weather that dries out as the field goes through.</p>
+                        <p>Stuff wears out: clutches fade, turbos heat-soak, radiators get holed and a money shift costs you the engine. Damage sticks, with dents and knocked-out alignment. Stages are procedurally generated with pace notes, and the PS1/PS2 look can be turned down if it hurts.</p>
+                        <p>Newest builds add a proper race track with laps, six boss cars you can race and drive yourself, early VR support, and a garage computer with an ECU app for tuning your engine, a repair guide that highlights parts on the car, and an AI Lab where driving brains learn to drive.</p>
+                        <ul class="project-facts">
+                            <li><b>60</b> cars, each with its own engine and quirks</li>
+                            <li><b>14</b> road surfaces</li>
+                            <li><b>6</b> boss cars you can drive</li>
+                        </ul>
+                        <div class="sr-loops">
+                            <figure>
+                                <video class="sr-video" muted loop playsinline preload="none" poster="media/shitbox-rally/loop-1.jpg" width="640" height="360" aria-label="The WRX kicking up snow on a winter stage">
+                                    <source data-src="media/shitbox-rally/loop-1.mp4" type="video/mp4">
+                                    <source data-src="media/shitbox-rally/loop-1.webm" type="video/webm">
+                                </video>
+                                <figcaption>Snow spray</figcaption>
+                            </figure>
+                            <figure>
+                                <video class="sr-video" muted loop playsinline preload="none" poster="media/shitbox-rally/loop-2.jpg" width="640" height="360" aria-label="The WRX doing donuts and tearing up a field">
+                                    <source data-src="media/shitbox-rally/loop-2.mp4" type="video/mp4">
+                                    <source data-src="media/shitbox-rally/loop-2.webm" type="video/webm">
+                                </video>
+                                <figcaption>Donuts</figcaption>
+                            </figure>
+                            <figure>
+                                <video class="sr-video" muted loop playsinline preload="none" poster="media/shitbox-rally/loop-3.jpg" width="640" height="360" aria-label="The WRX sliding on a gravel stage at night">
+                                    <source data-src="media/shitbox-rally/loop-3.mp4" type="video/mp4">
+                                    <source data-src="media/shitbox-rally/loop-3.webm" type="video/webm">
+                                </video>
+                                <figcaption>Night stages</figcaption>
+                            </figure>
+                        </div>
+                        <div class="sr-stills">
+                            <figure>
+                                <picture>
+                                    <source srcset="media/shitbox-rally/still-1.webp" type="image/webp">
+                                    <img src="media/shitbox-rally/still-1.jpg" alt="Close-up of the WRX tire and suspension on sand" width="960" height="540" loading="lazy" decoding="async">
+                                </picture>
+                                <figcaption>Tire and suspension close-up</figcaption>
+                            </figure>
+                            <figure>
+                                <picture>
+                                    <source srcset="media/shitbox-rally/still-2.webp" type="image/webp">
+                                    <img src="media/shitbox-rally/still-2.jpg" alt="An orange muscle car doing a smoky burnout" width="960" height="540" loading="lazy" decoding="async">
+                                </picture>
+                                <figcaption>Burnout smoke</figcaption>
+                            </figure>
+                        </div>
+                        <div class="experience-skills">
+                            <span>Godot 4</span><span>GDScript</span><span>Jolt Physics</span><span>Steamworks</span><span>Networking</span><span>Shaders</span><span>Procedural generation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/ArthurJClack/shitboxrally-releases/releases/latest/download/ShitboxRally_Setup.exe" class="btn btn-primary"><i class="fas fa-download"></i> Download for Windows</a>
+                            <a href="https://github.com/ArthurJClack/shitboxrally-releases" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fas fa-flag-checkered"></i> Releases</a>
+                            <a href="https://github.com/ArthurJClack/shitboxrally" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-github"></i> Physics code</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-diagram-project"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>hq</h3>
+                        <p class="project-status live">v0.2.10 released</p>
+                        <p>The team app my game studio runs on. One Go executable that opens in its own window, with no server to host: GitHub is the backend. Issues hold the board, a pinned issue holds the chat, and a shared repo holds the settings.</p>
+                        <p>Teammates update, push and publish any of our games in one click, and hq drives the git rebase, merge and release workflow underneath. It installs with one command, updates itself, and has an end-to-end test suite that runs against a fake GitHub server.</p>
+                        <div class="experience-skills">
+                            <span>Go</span><span>Git</span><span>GitHub API</span><span>End-to-end tests</span><span>Self-updating</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/ArthurJClack/devsuite" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-car-burst"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>WA Commute Crash Risk</h3>
                         <p class="project-status live">Live</p>
-                        <p>The site you're reading. Hand-written HTML, CSS and vanilla JavaScript with no framework or build step, deployed from a GitHub repo to GitHub Pages.</p>
-                        <p>Responsive down to phone width, keyboard-accessible navigation, scroll-reveal that degrades gracefully without JS, and structured data for search engines.</p>
+                        <p>Maps every fatal traffic crash in Washington from 2010 to 2024 using NHTSA data and estimates your odds of a crash on your own commute.</p>
+                        <p>View crashes as points or a heat map and filter by cause. Enter two addresses and it routes the drive, grades each alternate route, and flags the deadliest one-mile stretches. Results adjust for road type, local crash history, time of day, weather and driver habits, based on published traffic-safety research.</p>
                         <div class="experience-skills">
-                            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>GitHub Pages</span>
+                            <span>JavaScript</span><span>Leaflet</span><span>Open Data APIs</span><span>Statistics</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/ArthurJClack/ArthurJClack.github.io" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <div class="project-header">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>ApplyBot</h3>
-                        <p class="project-status">In progress</p>
-                        <p>A job application assistant with a desktop app. It finds postings from sources like Greenhouse, Lever and Ashby, scores how well they fit, and tailors a resume and cover letter from one plain-text profile file. A code-level guard rejects invented facts.</p>
-                        <p>It fills in the application form in a real browser, saves answers for next time, and asks you before submitting. Works with OpenAI, Anthropic, Gemini or local Ollama models, or with no AI at all, and can be driven from Claude over MCP.</p>
-                        <div class="experience-skills">
-                            <span>Python</span><span>Playwright</span><span>LLM APIs</span><span>MCP</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/ArthurJClack/applybot" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <div class="project-header">
-                        <i class="fas fa-toolbox"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>wetwaresuite</h3>
-                        <p class="project-status live">v0.2.2 released</p>
-                        <p>An all-in-one, lightweight software suite: CAD and blueprints, 3D printing, photo and paint, 3D modeling and sculpting, audio, video, game assets, office documents, circuits, offline maps and a universal file toolkit, all on one shared core.</p>
-                        <p>It ships as 13 small standalone apps so you install only what you need, and they hand work to each other, like a texture from the image app onto a model. Everything works offline with no account, and Claude can drive every app over MCP. Installers for Windows, macOS and Linux, GPL-3.0.</p>
-                        <div class="experience-skills">
-                            <span>C++20</span><span>CMake</span><span>Rust</span><span>MCP</span><span>3D geometry</span><span>Cross-platform</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/ArthurJClack/wetwaresuite/releases/latest" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-download"></i> Download</a>
-                            <a href="https://github.com/ArthurJClack/wetwaresuite" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://arthurjclack.github.io/wa-commute-crash-risk/" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-up-right-from-square"></i> Live App</a>
+                            <a href="https://github.com/ArthurJClack/wa-commute-crash-risk" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-github"></i> Code</a>
                         </div>
                     </div>
                 </article>
@@ -430,85 +474,36 @@
                 </article>
                 <article class="project-card">
                     <div class="project-header">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-toolbox"></i>
                     </div>
                     <div class="project-content">
-                        <h3>ML and Cryptography</h3>
-                        <p>I teach cars to drive with machine learning: small neural nets that learn from the road, tuned until they hold a line. I also work in weight space, shaping a network by programming its weights directly instead of only training them. Cryptography is the other thing I am studying, learning how hashing, encryption and signatures work and how to use them safely in real software.</p>
+                        <h3>wetwaresuite</h3>
+                        <p class="project-status live">v0.2.2 released</p>
+                        <p>An all-in-one, lightweight software suite: CAD and blueprints, 3D printing, photo and paint, 3D modeling and sculpting, audio, video, game assets, office documents, circuits, offline maps and a universal file toolkit, all on one shared core.</p>
+                        <p>It ships as 13 small standalone apps so you install only what you need, and they hand work to each other, like a texture from the image app onto a model. Everything works offline with no account, and Claude can drive every app over MCP. Installers for Windows, macOS and Linux, GPL-3.0.</p>
                         <div class="experience-skills">
-                            <span>Neural networks</span><span>Weight-space programming</span><span>Cryptography</span>
+                            <span>C++20</span><span>CMake</span><span>Rust</span><span>MCP</span><span>3D geometry</span><span>Cross-platform</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/ArthurJClack/wetwaresuite/releases/latest" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-download"></i> Download</a>
+                            <a href="https://github.com/ArthurJClack/wetwaresuite" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-github"></i> Code</a>
                         </div>
                     </div>
                 </article>
-                <article class="project-card featured">
+                <article class="project-card">
                     <div class="project-header">
-                        <i class="fas fa-flag-checkered"></i>
+                        <i class="fas fa-window-maximize"></i>
                     </div>
                     <div class="project-content">
-                        <h3>Shitbox Rally</h3>
-                        <p class="project-status live">v0.7.6.35 released</p>
-                        <figure class="sr-hero">
-                            <video class="sr-video" data-hero muted loop playsinline preload="none" poster="media/shitbox-rally/hero-still.jpg" width="1280" height="720" aria-label="Shitbox Rally gameplay: a modded silver 2002 WRX throwing gravel on a forest stage">
-                                <source data-src="media/shitbox-rally/hero.mp4" type="video/mp4">
-                                <source data-src="media/shitbox-rally/hero.webm" type="video/webm">
-                            </video>
-                            <button class="sr-sound" type="button" aria-pressed="false"><i class="fas fa-volume-xmark"></i> <span>Sound off</span></button>
-                            <figcaption>Tired old cars, real physics, roads that never repeat. <span class="sr-hint">Hover or tap to play.</span></figcaption>
-                        </figure>
-                        <p>A rally racing game about tired old cars on procedurally generated stages, with a PS1/PS2-era look. Built from the physics up in Godot 4 with Jolt: raycast suspension, a slip-ratio/slip-angle tyre model, simulated clutch, gearboxes and differentials, and engine sounds rendered from real torque curves.</p>
-                        <p>Steam lobbies or join by IP, split-screen on one PC, push-to-talk voice that sounds like a CB radio and fades with distance, and a car radio that plays your own music for your friends. Force feedback for MOZA, Fanatec, Logitech, Thrustmaster and Simagic wheels, night driving with warming-up halogens and HIDs, and weather that dries out as the field goes through.</p>
-                        <p>Stuff wears out: clutches fade, turbos heat-soak, radiators get holed and a money shift costs you the engine. Damage sticks, with dents and knocked-out alignment. Stages are procedurally generated with pace notes, and the PS1/PS2 look can be turned down if it hurts.</p>
-                        <p>Newest builds add a proper race track with laps, six boss cars you can race and drive yourself, early VR support, and a garage computer with an ECU app for tuning your engine, a repair guide that highlights parts on the car, and an AI Lab where driving brains learn to drive.</p>
-                        <ul class="project-facts">
-                            <li><b>60</b> cars, each with its own engine and quirks</li>
-                            <li><b>14</b> road surfaces</li>
-                            <li><b>6</b> boss cars you can drive</li>
-                        </ul>
-                        <div class="sr-loops">
-                            <figure>
-                                <video class="sr-video" muted loop playsinline preload="none" poster="media/shitbox-rally/loop-1.jpg" width="640" height="360" aria-label="The WRX kicking up snow on a winter stage">
-                                    <source data-src="media/shitbox-rally/loop-1.mp4" type="video/mp4">
-                                    <source data-src="media/shitbox-rally/loop-1.webm" type="video/webm">
-                                </video>
-                                <figcaption>Snow spray</figcaption>
-                            </figure>
-                            <figure>
-                                <video class="sr-video" muted loop playsinline preload="none" poster="media/shitbox-rally/loop-2.jpg" width="640" height="360" aria-label="The WRX doing donuts and tearing up a field">
-                                    <source data-src="media/shitbox-rally/loop-2.mp4" type="video/mp4">
-                                    <source data-src="media/shitbox-rally/loop-2.webm" type="video/webm">
-                                </video>
-                                <figcaption>Donuts</figcaption>
-                            </figure>
-                            <figure>
-                                <video class="sr-video" muted loop playsinline preload="none" poster="media/shitbox-rally/loop-3.jpg" width="640" height="360" aria-label="The WRX sliding on a gravel stage at night">
-                                    <source data-src="media/shitbox-rally/loop-3.mp4" type="video/mp4">
-                                    <source data-src="media/shitbox-rally/loop-3.webm" type="video/webm">
-                                </video>
-                                <figcaption>Night stages</figcaption>
-                            </figure>
-                        </div>
-                        <div class="sr-stills">
-                            <figure>
-                                <picture>
-                                    <source srcset="media/shitbox-rally/still-1.webp" type="image/webp">
-                                    <img src="media/shitbox-rally/still-1.jpg" alt="Close-up of the WRX tire and suspension on sand" width="960" height="540" loading="lazy" decoding="async">
-                                </picture>
-                                <figcaption>Tire and suspension close-up</figcaption>
-                            </figure>
-                            <figure>
-                                <picture>
-                                    <source srcset="media/shitbox-rally/still-2.webp" type="image/webp">
-                                    <img src="media/shitbox-rally/still-2.jpg" alt="An orange muscle car doing a smoky burnout" width="960" height="540" loading="lazy" decoding="async">
-                                </picture>
-                                <figcaption>Burnout smoke</figcaption>
-                            </figure>
-                        </div>
+                        <h3>This Portfolio</h3>
+                        <p class="project-status live">Live</p>
+                        <p>The site you're reading. Hand-written HTML, CSS and vanilla JavaScript with no framework or build step, deployed from a GitHub repo to GitHub Pages.</p>
+                        <p>Responsive down to phone width, keyboard-accessible navigation, scroll-reveal that degrades gracefully without JS, and structured data for search engines.</p>
                         <div class="experience-skills">
-                            <span>Godot 4</span><span>GDScript</span><span>Jolt Physics</span><span>Steamworks</span><span>Networking</span><span>Shaders</span><span>Procedural generation</span>
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>GitHub Pages</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/ArthurJClack/shitboxrally-releases/releases/latest/download/ShitboxRally_Setup.exe" class="btn btn-primary"><i class="fas fa-download"></i> Download for Windows</a>
-                            <a href="https://github.com/ArthurJClack/shitboxrally-releases" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fas fa-flag-checkered"></i> Releases</a>
+                            <a href="https://github.com/ArthurJClack/ArthurJClack.github.io" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-github"></i> Code</a>
                         </div>
                     </div>
                 </article>
@@ -516,24 +511,6 @@
 
             <h3 class="subsection-title"><i class="fas fa-code-branch"></i> More Projects</h3>
             <div class="projects-grid">
-                <article class="project-card">
-                    <div class="project-header">
-                        <i class="fas fa-car-burst"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>WA Commute Crash Risk</h3>
-                        <p class="project-status live">Live</p>
-                        <p>Maps every fatal traffic crash in Washington from 2010 to 2024 using NHTSA data and estimates your odds of a crash on your own commute.</p>
-                        <p>View crashes as points or a heat map and filter by cause. Enter two addresses and it routes the drive, grades each alternate route, and flags the deadliest one-mile stretches. Results adjust for road type, local crash history, time of day, weather and driver habits, based on published traffic-safety research.</p>
-                        <div class="experience-skills">
-                            <span>JavaScript</span><span>Leaflet</span><span>Open Data APIs</span><span>Statistics</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://arthurjclack.github.io/wa-commute-crash-risk/" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-up-right-from-square"></i> Live App</a>
-                            <a href="https://github.com/ArthurJClack/wa-commute-crash-risk" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </article>
                 <article class="project-card">
                     <div class="project-header">
                         <i class="fas fa-crosshairs"></i>
